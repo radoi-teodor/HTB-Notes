@@ -1,0 +1,67 @@
+```bash
+nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN "/home/kali/Documents/HTB-Notes/CozyHosting/scanned_recon/10.129.105.42/scans/_quick_tcp_nmap.txt" -oX "/home/kali/Documents/HTB-Notes/CozyHosting/scanned_recon/10.129.105.42/scans/xml/_quick_tcp_nmap.xml" 10.129.105.42
+```
+
+[/home/kali/Documents/HTB-Notes/CozyHosting/scanned_recon/10.129.105.42/scans/_quick_tcp_nmap.txt](file:///home/kali/Documents/HTB-Notes/CozyHosting/scanned_recon/10.129.105.42/scans/_quick_tcp_nmap.txt):
+
+```
+# Nmap 7.94 scan initiated Fri Sep  8 06:56:17 2023 as: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN /home/kali/Documents/HTB-Notes/CozyHosting/scanned_recon/10.129.105.42/scans/_quick_tcp_nmap.txt -oX /home/kali/Documents/HTB-Notes/CozyHosting/scanned_recon/10.129.105.42/scans/xml/_quick_tcp_nmap.xml 10.129.105.42
+adjust_timeouts2: packet supposedly had rtt of -706790 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -706790 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -717982 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -717982 microseconds.  Ignoring time.
+Nmap scan report for 10.129.105.42
+Host is up, received user-set (0.070s latency).
+Scanned at 2023-09-08 06:56:19 EDT for 21s
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 43:56:bc:a7:f2:ec:46:dd:c1:0f:83:30:4c:2c:aa:a8 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEpNwlByWMKMm7ZgDWRW+WZ9uHc/0Ehct692T5VBBGaWhA71L+yFgM/SqhtUoy0bO8otHbpy3bPBFtmjqQPsbC8=
+|   256 6f:7a:6c:3f:a6:8d:e2:75:95:d4:7b:71:ac:4f:7e:42 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHVzF8iMVIHgp9xMX9qxvbaoXVg1xkGLo61jXuUAYq5q
+80/tcp open  http    syn-ack ttl 63 nginx 1.18.0 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to http://cozyhosting.htb
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+Device type: general purpose|storage-misc|WAP
+Running (JUST GUESSING): Linux 5.X|4.X|2.6.X|3.X (97%), HP embedded (89%), Ubiquiti embedded (88%), Ubiquiti AirOS 5.X (88%)
+OS CPE: cpe:/o:linux:linux_kernel:5.0 cpe:/o:linux:linux_kernel:4 cpe:/h:hp:p2000_g3 cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:3 cpe:/h:ubnt:airmax_nanostation cpe:/o:ubnt:airos:5.5.9
+OS fingerprint not ideal because: Didn't receive UDP response. Please try again with -sSU
+Aggressive OS guesses: Linux 5.0 (97%), Linux 5.0 - 5.4 (92%), Linux 4.15 - 5.8 (89%), HP P2000 G3 NAS device (89%), Linux 5.3 - 5.4 (88%), Linux 2.6.32 (88%), Linux 2.6.32 - 3.1 (88%), Ubiquiti AirMax NanoStation WAP (Linux 2.6.32) (88%), Linux 3.7 (88%), Linux 5.0 - 5.5 (88%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.94%E=4%D=9/8%OT=22%CT=1%CU=%PV=Y%DS=2%DC=T%G=N%TM=64FAFDE8%P=x86_64-pc-linux-gnu)
+SEQ(SP=106%GCD=1%ISR=109%TI=Z%CI=Z%TS=A)
+OPS(O1=M53CST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11NW7%O6=M53CST11)
+WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)
+ECN(R=Y%DF=Y%TG=40%W=FAF0%O=M53CNNSNW7%CC=Y%Q=)
+T1(R=Y%DF=Y%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=N)
+T4(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=Y%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=N)
+U1(R=N)
+IE(R=Y%DFI=N%TG=40%CD=S)
+
+Uptime guess: 5.728 days (since Sat Sep  2 13:27:39 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=262 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 256/tcp)
+HOP RTT      ADDRESS
+1   70.86 ms 10.10.14.1
+2   70.96 ms 10.129.105.42
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Sep  8 06:56:40 2023 -- 1 IP address (1 host up) scanned in 24.03 seconds
+
+```

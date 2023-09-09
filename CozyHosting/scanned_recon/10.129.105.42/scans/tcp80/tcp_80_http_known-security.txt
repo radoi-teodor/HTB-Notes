@@ -1,0 +1,15 @@
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 08 Sep 2023 10:56:40 GMT
+Content-Type: text/html
+Content-Length: 178
+Connection: keep-alive
+Location: http://cozyhosting.htb
+
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>

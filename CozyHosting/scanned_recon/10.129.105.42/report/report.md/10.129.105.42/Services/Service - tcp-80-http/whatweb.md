@@ -1,0 +1,49 @@
+```bash
+whatweb --color=never --no-errors -a 3 -v http://10.129.105.42:80 2>&1
+```
+
+[/home/kali/Documents/HTB-Notes/CozyHosting/scanned_recon/10.129.105.42/scans/tcp80/tcp_80_http_whatweb.txt](file:///home/kali/Documents/HTB-Notes/CozyHosting/scanned_recon/10.129.105.42/scans/tcp80/tcp_80_http_whatweb.txt):
+
+```
+WhatWeb report for http://10.129.105.42:80
+Status    : 301 Moved Permanently
+Title     : 301 Moved Permanently
+IP        : 10.129.105.42
+Country   : RESERVED, ZZ
+
+Summary   : HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)], nginx[1.18.0], RedirectLocation[http://cozyhosting.htb]
+
+Detected Plugins:
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to
+	identify the operating system from the server header.
+
+	OS           : Ubuntu Linux
+	String       : nginx/1.18.0 (Ubuntu) (from server string)
+
+[ RedirectLocation ]
+	HTTP Server string location. used with http-status 301 and
+	302
+
+	String       : http://cozyhosting.htb (from location)
+
+[ nginx ]
+	Nginx (Engine-X) is a free, open-source, high-performance
+	HTTP server and reverse proxy, as well as an IMAP/POP3
+	proxy server.
+
+	Version      : 1.18.0
+	Website     : http://nginx.net/
+
+HTTP Headers:
+	HTTP/1.1 301 Moved Permanently
+	Server: nginx/1.18.0 (Ubuntu)
+	Date: Fri, 08 Sep 2023 10:56:51 GMT
+	Content-Type: text/html
+	Content-Length: 178
+	Connection: close
+	Location: http://cozyhosting.htb
+
+
+
+```
