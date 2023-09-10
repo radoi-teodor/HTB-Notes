@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Pilgrimage" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694339734" ts_lastsave="1694341545">
+    <rich_text>Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 20:be:60:d2:95:f6:28:c1:b7:e9:e8:17:06:f1:68:f3 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDnPDlM1cNfnBOJE71gEOCGeNORg5gzOK/TpVSXgMLa6Ub/7KPb1hVggIf4My+cbJVk74fKabFVscFgDHtwPkohPaDU8XHdoO03vU8H04T7eqUGj/I2iqyIHXQoSC4o8Jf5ljiQi7CxWWG2t0n09CPMkwdqfEJma7BGmDtCQcmbm36QKmUv6Kho7/LgsPJGBP1kAOgUHFfYN1TEAV6TJ09OaCanDlV/fYiG+JT1BJwX5kqpnEAK012876UFfvkJeqPYXvM0+M9mB7XGzspcXX0HMbvHKXz2HXdCdGSH59Uzvjl0dM+itIDReptkGUn43QTCpf2xJlL4EeZKZCcs/gu8jkuxXpo9lFVkqgswF/zAcxfksjytMiJcILg4Ca1VVMBs66ZHi5KOz8QedYM2lcLXJGKi+7zl3i8+adGTUzYYEvMQVwjXG0mPkHHSldstWMGwjXqQsPoQTclEI7XpdlRdjS6S/WXHixTmvXGTBhNXtrETn/fBw4uhJx4dLxNSJeM=
+|   256 0e:b6:a6:a8:c9:9b:41:73:74:6e:70:18:0d:5f:e0:af (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOaVAN4bg6zLU3rUMXOwsuYZ8yxLlkVTviJbdFijyp9fSTE6Dwm4e9pNI8MAWfPq0T0Za0pK0vX02ZjRcTgv3yg=
+|   256 d1:4e:29:3c:70:86:69:b4:d7:2c:c8:0b:48:6e:98:04 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILGkCiJaVyn29/d2LSyMWelMlcrxKVZsCCgzm6JjcH1W
+80/tcp open  http    syn-ack ttl 63 nginx 1.18.0
+|_http-title: Did not follow redirect to </rich_text>
+    <rich_text link="webs http://pilgrimage.htb/">http://pilgrimage.htb/</rich_text>
+    <rich_text>
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: nginx/1.18.0
+Device type: general purpose
+Running: Linux 5.X
+OS CPE: cpe:/o:linux:linux_kernel:5.0
+OS details: Linux 5.0
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=9/10%OT=22%CT=1%CU=39789%PV=Y%DS=2%DC=T%G=Y%TM=64FD937
+OS:E%P=x86_64-pc-linux-gnu)SEQ(SP=104%GCD=1%ISR=10B%TI=Z%CI=Z%II=I%TS=A)OPS
+OS:(O1=M53CST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST1
+OS:1NW7%O6=M53CST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN
+OS:(R=Y%DF=Y%T=40%W=FAF0%O=M53CNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%
+OS:RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+</rich_text>
+    <node name="Enumeration" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694339737" ts_lastsave="1694342200">
+      <rich_text>We will add </rich_text>
+      <rich_text weight="heavy">pilgrimage.htb</rich_text>
+      <rich_text> to hosts.
+We find an XSS vulnerability here: </rich_text>
+      <rich_text link="webs http://pilgrimage.htb/?message=javascript:alert(1)&amp;status=success">http://pilgrimage.htb/?message=javascript:alert(1)&amp;status=success</rich_text>
+      <rich_text>.
+
+Ferox:
+
+
+We discover a git repository and we dump it with </rich_text>
+      <rich_text weight="heavy">gitdumper</rich_text>
+      <rich_text>.
+We find this command in the project:
+
+Maybe we can inject using the name.
+The project uses: </rich_text>
+      <rich_text weight="heavy">ImageMagick 7.1.0-49</rich_text>
+      <rich_text>.</rich_text>
+      <codebox char_offset="147" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">200      GET       94l      234w     3576c http://pilgrimage.htb/assets/css/custom.css
+200      GET        5l       27w     1031c http://pilgrimage.htb/assets/js/popup.js
+200      GET      171l      403w     6166c http://pilgrimage.htb/login.php
+200      GET      171l      403w     6173c http://pilgrimage.htb/register.php
+200      GET      186l      505w     4928c http://pilgrimage.htb/assets/css/owl.css
+200      GET      178l      395w     5292c http://pilgrimage.htb/assets/js/custom.js
+302      GET        0l        0w        0c http://pilgrimage.htb/logout.php =&gt; http://pilgrimage.htb/
+302      GET        0l        0w        0c http://pilgrimage.htb/dashboard.php =&gt; http://pilgrimage.htb/login.php
+200      GET      198l      494w     7621c http://pilgrimage.htb/index.php
+200      GET     2349l     5229w    50334c http://pilgrimage.htb/assets/css/templatemo-woox-travel.css
+200      GET        7l      942w    60110c http://pilgrimage.htb/vendor/bootstrap/js/bootstrap.min.js
+200      GET       11l      552w    57997c http://pilgrimage.htb/assets/css/animate.css
+200      GET        2l     1283w    86927c http://pilgrimage.htb/vendor/jquery/jquery.min.js
+200      GET     6805l    11709w   123176c http://pilgrimage.htb/assets/css/fontawesome.css
+200      GET       15l     1928w   119998c http://pilgrimage.htb/assets/js/isotope.min.js
+200      GET        7l     2223w   194705c http://pilgrimage.htb/vendor/bootstrap/css/bootstrap.min.css
+200      GET    16582l    60225w   485937c http://pilgrimage.htb/assets/js/tabs.js
+200      GET      198l      494w     7621c http://pilgrimage.htb/</codebox>
+      <codebox char_offset="247" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">exec("/var/www/pilgrimage.htb/magick convert /var/www/pilgrimage.htb/tmp/" . $upload-&gt;getName() . $mime . " -resize 50% /var/www/pilgrimage.htb/shrunk/" . $newname . $mime);</codebox>
+    </node>
+    <node name="Exploit" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694339740" ts_lastsave="1694350445">
+      <rich_text>We will use: </rich_text>
+      <rich_text link="webs https://github.com/voidz0r/CVE-2022-44268">https://github.com/voidz0r/CVE-2022-44268</rich_text>
+      <rich_text>.
+Using this, we are able to get /etc/passwd:
+
+We get our attention to:
+
+And we will try to extract the DB using this CVE.
+We find this credentials: </rich_text>
+      <rich_text weight="heavy">emily:abigchonkyboi123</rich_text>
+      <rich_text>.
+We can SSH using them.</rich_text>
+      <codebox char_offset="100" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\nbin:x:2:2:bin:/bin:/usr/sbin/nologin\nsys:x:3:3:sys:/dev:/usr/sbin/nologin\nsync:x:4:65534:sync:/bin:/bin/sync\ngames:x:5:60:games:/usr/games:/usr/sbin/nologin\nman:x:6:12:man:/var/cache/man:/usr/sbin/nologin\nlp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin\nmail:x:8:8:mail:/var/mail:/usr/sbin/nologin\nnews:x:9:9:news:/var/spool/news:/usr/sbin/nologin\nuucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin\nproxy:x:13:13:proxy:/bin:/usr/sbin/nologin\nwww-data:x:33:33:www-data:/var/www:/usr/sbin/nologin\nbackup:x:34:34:backup:/var/backups:/usr/sbin/nologin\nlist:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin\nirc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin\ngnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin\nnobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin\n_apt:x:100:65534::/nonexistent:/usr/sbin/nologin\nsystemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin\nsystemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin\nmessagebus:x:103:109::/nonexistent:/usr/sbin/nologin\nsystemd-timesync:x:104:110:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin\nemily:x:1000:1000:emily,,,:/home/emily:/bin/bash\nsystemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin\nsshd:x:105:65534::/run/sshd:/usr/sbin/nologin\n_laurel:x:998:998::/var/log/laurel:/bin/false\n</codebox>
+      <codebox char_offset="127" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$db = new PDO('sqlite:/var/db/pilgrimage');</codebox>
+    </node>
+    <node name="Privilege Escalation" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694339746" ts_lastsave="1694351471">
+      <rich_text>Initially, we are </rich_text>
+      <rich_text weight="heavy">emily</rich_text>
+      <rich_text>.
+SUID:
+
+
+We don't have SUDO capabilities. 
+Using PSpy, we find:
+
+
+</rich_text>
+      <rich_text weight="heavy">malwarescan.sh</rich_text>
+      <rich_text>:
+
+
+Permissions:
+
+
+Binwalk has version: </rich_text>
+      <rich_text weight="heavy">Binwalk v2.3.2</rich_text>
+      <rich_text>. We find this RCE: </rich_text>
+      <rich_text link="webs https://www.exploit-db.com/exploits/51249">https://www.exploit-db.com/exploits/51249</rich_text>
+      <codebox char_offset="31" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/bin/su
+/usr/bin/chsh
+/usr/bin/passwd
+/usr/bin/fusermount
+/usr/bin/mount
+/usr/bin/chfn
+/usr/bin/gpasswd
+/usr/bin/newgrp
+/usr/bin/sudo
+/usr/bin/umount</codebox>
+      <codebox char_offset="89" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">/bin/bash /usr/sbin/malwarescan.sh</codebox>
+      <codebox char_offset="108" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">#!/bin/bash
+
+blacklist=("Executable script" "Microsoft executable")
+
+/usr/bin/inotifywait -m -e create /var/www/pilgrimage.htb/shrunk/ | while read FILE; do
+        filename="/var/www/pilgrimage.htb/shrunk/$(/usr/bin/echo "$FILE" | /usr/bin/tail -n 1 | /usr/bin/sed -n -e 's/^.*CREATE //p')"
+        binout="$(/usr/local/bin/binwalk -e "$filename")"
+        for banned in "${blacklist[@]}"; do
+                if [[ "$binout" == *"$banned"* ]]; then
+                        /usr/bin/rm "$filename"
+                        break
+                fi
+        done
+done</codebox>
+      <codebox char_offset="124" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">-rwxr--r-- 1 root root 474 Jun  1 19:14 /usr/sbin/malwarescan.sh</codebox>
+    </node>
+  </node>
+</cherrytree>

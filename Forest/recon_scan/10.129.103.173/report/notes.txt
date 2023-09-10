@@ -1,0 +1,104 @@
+[*] domain found on tcp/53.
+
+
+
+[*] kerberos-sec found on tcp/88.
+
+
+
+[*] msrpc found on tcp/135.
+
+
+
+[*] netbios-ssn found on tcp/139.
+
+
+
+[*] ldap found on tcp/389.
+
+
+
+[*] kpasswd5 found on tcp/464.
+
+
+
+[*] ncacn_http found on tcp/593.
+
+
+
+[*] tcpwrapped found on tcp/636.
+
+
+
+[*] ldap found on tcp/3268.
+
+
+
+[*] tcpwrapped found on tcp/3269.
+
+
+
+[*] domain found on udp/53.
+
+
+
+[*] kerberos-sec found on udp/88.
+
+
+
+[*] ntp found on udp/123.
+
+
+
+[*] syn-ack found on tcp/445.
+
+
+
+[*] wsman found on tcp/5985.
+
+
+
+[*] mc-nmf found on tcp/9389.
+
+
+
+[*] http found on tcp/47001.
+
+
+
+[*] msrpc found on tcp/49664.
+
+
+
+[*] msrpc found on tcp/49665.
+
+
+
+[*] msrpc found on tcp/49666.
+
+
+
+[*] msrpc found on tcp/49667.
+
+
+
+[*] msrpc found on tcp/49671.
+
+
+
+[*] ncacn_http found on tcp/49676.
+
+
+
+[*] msrpc found on tcp/49677.
+
+
+
+[*] msrpc found on tcp/49681.
+
+
+
+[*] msrpc found on tcp/49698.
+
+
+

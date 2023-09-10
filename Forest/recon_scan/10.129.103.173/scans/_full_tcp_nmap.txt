@@ -1,0 +1,93 @@
+# Nmap 7.94 scan initiated Sun Sep 10 09:16:42 2023 as: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p- -oN /home/kali/Documents/HTB/HTB-Notes/Forest/recon_scan/10.129.103.173/scans/_full_tcp_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Forest/recon_scan/10.129.103.173/scans/xml/_full_tcp_nmap.xml 10.129.103.173
+Nmap scan report for 10.129.103.173
+Host is up, received user-set (0.063s latency).
+Scanned at 2023-09-10 09:16:42 EDT for 566s
+Not shown: 65512 closed tcp ports (reset)
+PORT      STATE SERVICE      REASON          VERSION
+53/tcp    open  domain?      syn-ack ttl 127
+88/tcp    open  kerberos-sec syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2023-09-10 13:24:20Z)
+135/tcp   open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+139/tcp   open  netbios-ssn  syn-ack ttl 127 Microsoft Windows netbios-ssn
+389/tcp   open  ldap         syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+445/tcp   open               syn-ack ttl 127 Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)
+464/tcp   open  kpasswd5?    syn-ack ttl 127
+593/tcp   open  ncacn_http   syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped   syn-ack ttl 127
+3268/tcp  open  ldap         syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped   syn-ack ttl 127
+5985/tcp  open  http         syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf       syn-ack ttl 127 .NET Message Framing
+47001/tcp open  http         syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49665/tcp open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49666/tcp open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49667/tcp open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49671/tcp open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49676/tcp open  ncacn_http   syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+49677/tcp open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49681/tcp open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49698/tcp open  msrpc        syn-ack ttl 127 Microsoft Windows RPC
+Device type: general purpose|specialized
+Running (JUST GUESSING): Microsoft Windows 2016|10|2012|2022|7|2008|Vista|2019 (93%)
+OS CPE: cpe:/o:microsoft:windows_server_2016 cpe:/o:microsoft:windows_10:1511 cpe:/o:microsoft:windows_server_2012:r2 cpe:/o:microsoft:windows_7::sp1 cpe:/o:microsoft:windows_server_2008::sp2 cpe:/o:microsoft:windows_vista::sp1:home_premium cpe:/o:microsoft:windows_10:1607 cpe:/o:microsoft:windows_8
+Aggressive OS guesses: Microsoft Windows Server 2016 (93%), Microsoft Windows 10 1511 (93%), Microsoft Windows Server 2012 R2 (93%), Microsoft Windows Server 2022 (90%), Microsoft Windows 7 SP1 or Windows Server 2008 SP2 (90%), Microsoft Windows Windows 7 SP1 (90%), Microsoft Windows Vista Home Premium SP1, Windows 7, or Windows Server 2008 (90%), Microsoft Windows 10 1607 (89%), Microsoft Windows Server 2019 (89%), Microsoft Windows Server 2012 Data Center (89%)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=9/10%OT=53%CT=1%CU=38827%PV=Y%DS=2%DC=T%G=Y%TM=64FDC3F
+OS:0%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=10B%TI=I%CI=I%II=I%TS=A)SEQ
+OS:(SP=101%GCD=1%ISR=10B%TI=I%CI=I%II=I%SS=S%TS=A)OPS(O1=M53CNW8ST11%O2=M53
+OS:CNW8ST11%O3=M53CNW8NNT11%O4=M53CNW8ST11%O5=M53CNW8ST11%O6=M53CST11)WIN(W
+OS:1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=2000)ECN(R=Y%DF=Y%T=80%W=2000%
+OS:O=M53CNW8NNS%CC=Y%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=
+OS:N)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=80%W=0%S=Z%A
+OS:=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T7(R=N)U
+OS:1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DF
+OS:I=N%T=80%CD=Z)
+
+Uptime guess: 0.008 days (since Sun Sep 10 09:14:54 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=257 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Host: FOREST; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 27201/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 23359/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 33578/udp): CLEAN (Failed to receive data)
+|   Check 4 (port 12433/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+|_clock-skew: mean: 2h26m49s, deviation: 4h02m32s, median: 6m47s
+| smb2-time: 
+|   date: 2023-09-10T13:32:41
+|_  start_date: 2023-09-10T13:22:01
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: FOREST
+|   NetBIOS computer name: FOREST\x00
+|   Domain name: htb.local
+|   Forest name: htb.local
+|   FQDN: FOREST.htb.local
+|_  System time: 2023-09-10T06:32:43-07:00
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+
+TRACEROUTE (using port 443/tcp)
+HOP RTT      ADDRESS
+1   58.53 ms 10.10.14.1
+2   59.43 ms 10.129.103.173
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Sep 10 09:26:08 2023 -- 1 IP address (1 host up) scanned in 565.64 seconds

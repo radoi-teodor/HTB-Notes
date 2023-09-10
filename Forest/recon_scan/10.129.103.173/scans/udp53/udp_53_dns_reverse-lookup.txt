@@ -1,0 +1,9 @@
+;; communications error to 10.129.103.173#53: timed out
+;; communications error to 10.129.103.173#53: timed out
+;; communications error to 10.129.103.173#53: timed out
+
+; <<>> DiG 9.18.12-1-Debian <<>> -p 53 -x 10.129.103.173 @10.129.103.173
+;; global options: +cmd
+;; no servers could be reached
+
+
