@@ -1,0 +1,7 @@
+200      GET      754l     3901w   338411c http://10.129.103.134/images/seal.png
+200      GET     1846l    10569w   778606c http://10.129.103.134/portraits/dabrahams.jpg
+200      GET     2433l    13135w   950557c http://10.129.103.134/portraits/lklein.jpg
+200      GET     2141l    10893w   831181c http://10.129.103.134/portraits/vdaisley.jpg
+200      GET      174l      545w     6767c http://10.129.103.134/index.html
+200      GET      235l      442w    23427c http://10.129.103.134/css/w3.css
+200      GET      174l      545w     6767c http://10.129.103.134/

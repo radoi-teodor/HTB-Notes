@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Sat Sep  9 14:07:14 2023 as: nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p- -oN /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/_full_tcp_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/xml/_full_tcp_nmap.xml 10.129.104.225 -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p- -oN /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/_full_tcp_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/xml/_full_tcp_nmap.xml 10.129.104.225" start="1694282834" startstr="Sat Sep  9 14:07:14 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1694282835"/>
+<taskend task="NSE" time="1694282835"/>
+<taskbegin task="NSE" time="1694282835"/>
+<taskend task="NSE" time="1694282835"/>
+<taskbegin task="NSE" time="1694282835"/>
+<taskend task="NSE" time="1694282835"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1694282835"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1694282835"/>
+<taskbegin task="SYN Stealth Scan" time="1694282835"/>
+<taskend task="SYN Stealth Scan" time="1694282870" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1694282870"/>
+<taskend task="Service scan" time="1694282876" extrainfo="2 services on 1 host"/>
+<taskbegin task="Traceroute" time="1694282882"/>
+<taskend task="Traceroute" time="1694282882"/>
+<taskbegin task="Parallel DNS resolution of 2 hosts." time="1694282882"/>
+<taskend task="Parallel DNS resolution of 2 hosts." time="1694282882"/>
+<taskbegin task="NSE" time="1694282882"/>
+<taskend task="NSE" time="1694282887"/>
+<taskbegin task="NSE" time="1694282887"/>
+<taskend task="NSE" time="1694282887"/>
+<taskbegin task="NSE" time="1694282887"/>
+<taskend task="NSE" time="1694282887"/>
+<host starttime="1694282835" endtime="1694282887"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.104.225" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="reset" count="65533" proto="tcp" ports="1-21,23-79,81-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="ssh" product="OpenSSH" version="8.9p1 Ubuntu 3ubuntu0.3" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.9p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  256 35:39:d4:39:40:4b:1f:61:86:dd:7c:37:bb:4b:98:9e (ECDSA)&#xa;ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKHZRUyrg9VQfKeHHT6CZwCwu9YkJosNSLvDmPM9EC0iMgHj7URNWV3LjJ00gWvduIq7MfXOxzbfPAqvm2ahzTc=&#xa;  256 1a:e9:72:be:8b:b1:05:d5:ef:fe:dd:80:d8:ef:c0:66 (ED25519)&#xa;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBe5w35/5klFq1zo5vISwwbYSVy1Zzy+K9ZCt0px+goO"><table>
+<elem key="fingerprint">3539d439404b1f6186dd7c37bb4b989e</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKHZRUyrg9VQfKeHHT6CZwCwu9YkJosNSLvDmPM9EC0iMgHj7URNWV3LjJ00gWvduIq7MfXOxzbfPAqvm2ahzTc=</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="fingerprint">1ae972be8bb105d5effedd80d8efc066</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIBe5w35/5klFq1zo5vISwwbYSVy1Zzy+K9ZCt0px+goO</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="nginx" version="1.18.0" extrainfo="Ubuntu" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+</table>
+</script><script id="http-server-header" output="nginx/1.18.0 (Ubuntu)"><elem>nginx/1.18.0 (Ubuntu)</elem>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/html)."></script></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="22"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="35799"/>
+<osmatch name="Linux 5.0" accuracy="100" line="68054">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:5.0</cpe></osclass>
+</osmatch>
+<osfingerprint fingerprint="OS:SCAN(V=7.94%E=4%D=9/9%OT=22%CT=1%CU=35799%PV=Y%DS=2%DC=T%G=Y%TM=64FCB487&#xa;OS:%P=x86_64-pc-linux-gnu)SEQ(SP=108%GCD=1%ISR=10B%TI=Z%CI=Z%TS=A)OPS(O1=M5&#xa;OS:3CST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11NW7%O&#xa;OS:6=M53CST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%D&#xa;OS:F=Y%TG=40%W=FAF0%O=M53CNNSNW7%CC=Y%Q=)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M53CNNS&#xa;OS:NW7%CC=Y%Q=)T1(R=Y%DF=Y%TG=40%S=O%A=S+%F=AS%RD=0%Q=)T1(R=Y%DF=Y%T=40%S=O&#xa;OS:%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD&#xa;OS:=0%Q=)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%TG=40%W=0%&#xa;OS:S=Z%A=S+%F=AR%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T&#xa;OS:6(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z&#xa;OS:%F=R%O=%RD=0%Q=)T7(R=N)U1(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G&#xa;OS:%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%TG=40%CD=S)IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+</os>
+<uptime seconds="3918227" lastboot="Wed Jul 26 05:44:20 2023"/>
+<distance value="2"/>
+<tcpsequence index="264" difficulty="Good luck!" values="228DB607,6E16C35,61E048C9,ED6DE26C,7F4683A3,7D9BFB51"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="1000HZ" values="E98B4E68,E98B4ED1,E98B4F34,E98B4F93,E98B4FF6,E98B505F"/>
+<trace port="256" proto="tcp">
+<hop ttl="1" ipaddr="10.10.14.1" rtt="59.01"/>
+<hop ttl="2" ipaddr="10.129.104.225" rtt="59.19"/>
+</trace>
+<times srtt="62726" rttvar="3499" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1694282887"/>
+<taskend task="NSE" time="1694282887"/>
+<taskbegin task="NSE" time="1694282887"/>
+<taskend task="NSE" time="1694282887"/>
+<taskbegin task="NSE" time="1694282887"/>
+<taskend task="NSE" time="1694282887"/>
+<runstats><finished time="1694282887" timestr="Sat Sep  9 14:08:07 2023" summary="Nmap done at Sat Sep  9 14:08:07 2023; 1 IP address (1 host up) scanned in 53.15 seconds" elapsed="53.15" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,93 @@
+# Nmap 7.94 scan initiated Sat Sep  9 14:07:43 2023 as: nmap -vv --reason -Pn -T4 -sV -p 80 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/tcp80/tcp_80_http_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/tcp80/xml/tcp_80_http_nmap.xml 10.129.104.225
+Nmap scan report for 10.129.104.225
+Host is up, received user-set (0.059s latency).
+Scanned at 2023-09-09 14:07:43 EDT for 147s
+
+Bug in http-security-headers: no string output.
+PORT   STATE SERVICE REASON         VERSION
+80/tcp open  http    syn-ack ttl 63 nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+| http-headers: 
+|   Server: nginx/1.18.0 (Ubuntu)
+|   Date: Sat, 09 Sep 2023 18:07:53 GMT
+|   Content-Type: text/html
+|   Content-Length: 149
+|   Last-Modified: Wed, 24 May 2023 14:04:44 GMT
+|   Connection: close
+|   ETag: "646e197c-95"
+|   Accept-Ranges: bytes
+|   
+|_  (Request type: HEAD)
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+| http-sitemap-generator: 
+|   Directory structure:
+|     /
+|       Other: 1
+|   Longest directory structure:
+|     Depth: 0
+|     Dir: /
+|   Total files found (by extension):
+|_    Other: 1
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-mobileversion-checker: No mobile version detected.
+|_http-malware-host: Host appears to be clean
+|_http-devframework: Couldn't determine the underlying framework or CMS. Try increasing 'httpspider.maxpagecount' value to spider more pages.
+| http-php-version: Logo query returned unknown hash 24830e2d33064987e524816b6676af1d
+|_Credits query returned unknown hash 24830e2d33064987e524816b6676af1d
+| http-methods: 
+|_  Supported Methods: GET HEAD
+| http-useragent-tester: 
+|   Status for browser useragent: 200
+|   Allowed User Agents: 
+|     Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+|     libwww
+|     lwp-trivial
+|     libcurl-agent/1.0
+|     PHP/
+|     Python-urllib/2.5
+|     GT::WWW
+|     Snoopy
+|     MFC_Tear_Sample
+|     HTTP::Lite
+|     PHPCrawl
+|     URI::Fetch
+|     Zend_Http_Client
+|     http client
+|     PECL::HTTP
+|     Wget/1.13.4 (linux-gnu)
+|_    WWW-Mechanize/1.34
+|_http-chrono: Request times for /; avg: 221.04ms; min: 210.26ms; max: 232.55ms
+|_http-comments-displayer: Couldn't find any comments.
+|_http-date: Sat, 09 Sep 2023 18:07:52 GMT; 0s from local time.
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+|_http-feed: Couldn't find any feeds.
+|_http-errors: Couldn't find any error pages.
+|_http-referer-checker: Couldn't find any cross-domain scripts.
+|_http-title: Site doesn't have a title (text/html).
+|_http-drupal-enum: Nothing found amongst the top 100 resources,use --script-args number=<number|all> for deeper analysis)
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2011-3192  BID:49303
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://www.securityfocus.com/bid/49303
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|       https://www.tenable.com/plugins/nessus/55976
+|_      https://seclists.org/fulldisclosure/2011/Aug/175
+|_http-config-backup: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+| http-vhosts: 
+|_128 names had status 200
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-wordpress-enum: Nothing found amongst the top 100 resources,use --script-args search-limit=<number|all> for deeper analysis)
+|_http-fetch: Please enter the complete path of the directory to save data in.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Sep  9 14:10:10 2023 -- 1 IP address (1 host up) scanned in 147.02 seconds

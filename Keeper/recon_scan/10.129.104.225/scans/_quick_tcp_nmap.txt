@@ -1,0 +1,57 @@
+# Nmap 7.94 scan initiated Sat Sep  9 14:07:14 2023 as: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/_quick_tcp_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/xml/_quick_tcp_nmap.xml 10.129.104.225
+adjust_timeouts2: packet supposedly had rtt of -699758 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -699758 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -682342 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -682342 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -701794 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -701794 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -702005 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -702005 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -702185 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -702185 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -703012 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -703012 microseconds.  Ignoring time.
+Nmap scan report for 10.129.104.225
+Host is up, received user-set (0.062s latency).
+Scanned at 2023-09-09 14:07:15 EDT for 28s
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 35:39:d4:39:40:4b:1f:61:86:dd:7c:37:bb:4b:98:9e (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKHZRUyrg9VQfKeHHT6CZwCwu9YkJosNSLvDmPM9EC0iMgHj7URNWV3LjJ00gWvduIq7MfXOxzbfPAqvm2ahzTc=
+|   256 1a:e9:72:be:8b:b1:05:d5:ef:fe:dd:80:d8:ef:c0:66 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBe5w35/5klFq1zo5vISwwbYSVy1Zzy+K9ZCt0px+goO
+80/tcp open  http    syn-ack ttl 63 nginx 1.18.0 (Ubuntu)
+|_http-title: Site doesn't have a title (text/html).
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD
+Aggressive OS guesses: Linux 5.0 (99%), Linux 5.0 - 5.4 (95%), HP P2000 G3 NAS device (93%), Linux 4.15 - 5.8 (93%), Linux 5.3 - 5.4 (93%), Linux 2.6.32 (92%), Linux 2.6.32 - 3.1 (92%), Infomir MAG-250 set-top box (92%), Ubiquiti AirMax NanoStation WAP (Linux 2.6.32) (92%), Linux 3.7 (92%)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=9/9%OT=22%CT=1%CU=43850%PV=Y%DS=2%DC=T%G=Y%TM=64FCB46F
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=102%GCD=1%ISR=109%TI=Z%TS=A)SEQ(SP=102%GCD
+OS:=1%ISR=109%TI=Z%CI=Z%TS=A)SEQ(SP=102%GCD=2%ISR=109%TI=Z%TS=A)OPS(O1=M53C
+OS:ST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11NW7%O6=
+OS:M53CST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=N)ECN
+OS:(R=Y%DF=Y%T=40%W=FAF0%O=M53CNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%
+OS:Q=)T5(R=N)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=N)T6(R=Y%DF
+OS:=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=N)U1(R=N)U1(R=Y%DF=N%T=40%IPL=16
+OS:4%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Uptime guess: 45.350 days (since Wed Jul 26 05:44:20 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=258 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 8888/tcp)
+HOP RTT      ADDRESS
+1   57.81 ms 10.10.14.1
+2   57.99 ms 10.129.104.225
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Sep  9 14:07:43 2023 -- 1 IP address (1 host up) scanned in 28.58 seconds

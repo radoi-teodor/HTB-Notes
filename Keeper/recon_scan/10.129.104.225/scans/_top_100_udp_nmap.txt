@@ -1,0 +1,144 @@
+# Nmap 7.94 scan initiated Sat Sep  9 14:07:14 2023 as: nmap -vv --reason -Pn -T4 -sU -A --top-ports 100 -oN /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/_top_100_udp_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Keeper/recon_scan/10.129.104.225/scans/xml/_top_100_udp_nmap.xml 10.129.104.225
+Increasing send delay for 10.129.104.225 from 50 to 100 due to 11 out of 12 dropped probes since last increase.
+Warning: 10.129.104.225 giving up on port because retransmission cap hit (6).
+Increasing send delay for 10.129.104.225 from 200 to 400 due to 11 out of 11 dropped probes since last increase.
+Increasing send delay for 10.129.104.225 from 400 to 800 due to 11 out of 11 dropped probes since last increase.
+adjust_timeouts2: packet supposedly had rtt of -89324 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -314855 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -314855 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -316958 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -316958 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -212525 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -212525 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -238186 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -238186 microseconds.  Ignoring time.
+Nmap scan report for 10.129.104.225
+Host is up, received user-set (0.059s latency).
+Scanned at 2023-09-09 14:07:15 EDT for 281s
+
+PORT      STATE         SERVICE         REASON              VERSION
+7/udp     open|filtered echo            no-response
+9/udp     open|filtered discard         no-response
+17/udp    closed        qotd            port-unreach ttl 63
+19/udp    open|filtered chargen         no-response
+49/udp    open|filtered tacacs          no-response
+53/udp    open|filtered domain          no-response
+67/udp    closed        dhcps           port-unreach ttl 63
+68/udp    open|filtered dhcpc           no-response
+69/udp    closed        tftp            port-unreach ttl 63
+80/udp    closed        http            port-unreach ttl 63
+88/udp    open|filtered kerberos-sec    no-response
+111/udp   closed        rpcbind         port-unreach ttl 63
+120/udp   open|filtered cfdptkt         no-response
+123/udp   closed        ntp             port-unreach ttl 63
+135/udp   closed        msrpc           port-unreach ttl 63
+136/udp   closed        profile         port-unreach ttl 63
+137/udp   closed        netbios-ns      port-unreach ttl 63
+138/udp   closed        netbios-dgm     port-unreach ttl 63
+139/udp   closed        netbios-ssn     port-unreach ttl 63
+158/udp   closed        pcmail-srv      port-unreach ttl 63
+161/udp   closed        snmp            port-unreach ttl 63
+162/udp   closed        snmptrap        port-unreach ttl 63
+177/udp   open|filtered xdmcp           no-response
+427/udp   closed        svrloc          port-unreach ttl 63
+443/udp   closed        https           port-unreach ttl 63
+445/udp   closed        microsoft-ds    port-unreach ttl 63
+497/udp   closed        retrospect      port-unreach ttl 63
+500/udp   open|filtered isakmp          no-response
+514/udp   closed        syslog          port-unreach ttl 63
+515/udp   closed        printer         port-unreach ttl 63
+518/udp   open|filtered ntalk           no-response
+520/udp   open|filtered route           no-response
+593/udp   closed        http-rpc-epmap  port-unreach ttl 63
+623/udp   closed        asf-rmcp        port-unreach ttl 63
+626/udp   open|filtered serialnumberd   no-response
+631/udp   closed        ipp             port-unreach ttl 63
+996/udp   closed        vsinet          port-unreach ttl 63
+997/udp   closed        maitrd          port-unreach ttl 63
+998/udp   closed        puparp          port-unreach ttl 63
+999/udp   closed        applix          port-unreach ttl 63
+1022/udp  closed        exp2            port-unreach ttl 63
+1023/udp  open|filtered unknown         no-response
+1025/udp  open|filtered blackjack       no-response
+1026/udp  closed        win-rpc         port-unreach ttl 63
+1027/udp  closed        unknown         port-unreach ttl 63
+1028/udp  open|filtered ms-lsa          no-response
+1029/udp  closed        solid-mux       port-unreach ttl 63
+1030/udp  closed        iad1            port-unreach ttl 63
+1433/udp  closed        ms-sql-s        port-unreach ttl 63
+1434/udp  open|filtered ms-sql-m        no-response
+1645/udp  closed        radius          port-unreach ttl 63
+1646/udp  closed        radacct         port-unreach ttl 63
+1701/udp  open|filtered L2TP            no-response
+1718/udp  closed        h225gatedisc    port-unreach ttl 63
+1719/udp  closed        h323gatestat    port-unreach ttl 63
+1812/udp  closed        radius          port-unreach ttl 63
+1813/udp  closed        radacct         port-unreach ttl 63
+1900/udp  closed        upnp            port-unreach ttl 63
+2000/udp  open|filtered cisco-sccp      no-response
+2048/udp  closed        dls-monitor     port-unreach ttl 63
+2049/udp  closed        nfs             port-unreach ttl 63
+2222/udp  closed        msantipiracy    port-unreach ttl 63
+2223/udp  closed        rockwell-csp2   port-unreach ttl 63
+3283/udp  open|filtered netassistant    no-response
+3456/udp  closed        IISrpc-or-vat   port-unreach ttl 63
+3703/udp  open|filtered adobeserver-3   no-response
+4444/udp  open|filtered krb524          no-response
+4500/udp  open|filtered nat-t-ike       no-response
+5000/udp  open|filtered upnp            no-response
+5060/udp  open|filtered sip             no-response
+5353/udp  closed        zeroconf        port-unreach ttl 63
+5632/udp  closed        pcanywherestat  port-unreach ttl 63
+9200/udp  closed        wap-wsp         port-unreach ttl 63
+10000/udp closed        ndmp            port-unreach ttl 63
+17185/udp closed        wdbrpc          port-unreach ttl 63
+20031/udp closed        bakbonenetvault port-unreach ttl 63
+30718/udp open|filtered unknown         no-response
+31337/udp closed        BackOrifice     port-unreach ttl 63
+32768/udp open|filtered omad            no-response
+32769/udp closed        filenet-rpc     port-unreach ttl 63
+32771/udp closed        sometimes-rpc6  port-unreach ttl 63
+32815/udp open|filtered unknown         no-response
+33281/udp open|filtered unknown         no-response
+49152/udp open|filtered unknown         no-response
+49153/udp closed        unknown         port-unreach ttl 63
+49154/udp closed        unknown         port-unreach ttl 63
+49156/udp open|filtered unknown         no-response
+49181/udp closed        unknown         port-unreach ttl 63
+49182/udp closed        unknown         port-unreach ttl 63
+49185/udp closed        unknown         port-unreach ttl 63
+49186/udp open|filtered unknown         no-response
+49188/udp closed        unknown         port-unreach ttl 63
+49190/udp open|filtered unknown         no-response
+49191/udp closed        unknown         port-unreach ttl 63
+49192/udp closed        unknown         port-unreach ttl 63
+49193/udp closed        unknown         port-unreach ttl 63
+49194/udp closed        unknown         port-unreach ttl 63
+49200/udp closed        unknown         port-unreach ttl 63
+49201/udp closed        unknown         port-unreach ttl 63
+65024/udp closed        unknown         port-unreach ttl 63
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing an open TCP port so results incomplete
+Aggressive OS guesses: Linux 2.6.32 (90%), Linux 2.4.20 (90%), Linux 2.6.14 - 2.6.34 (89%), Linux 2.6.17 (89%), Linux 2.6.17 (Mandriva) (89%), Linux 2.6.23 (89%), Linux 2.6.24 (89%), Linux 2.6.22 (89%), Linux 2.6.18 (88%), OpenWrt Chaos Calmer 15.05 (Linux 3.18) (88%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.94%E=4%D=9/9%OT=%CT=%CU=17%PV=Y%DS=2%DC=T%G=N%TM=64FCB56C%P=x86_64-pc-linux-gnu)
+SEQ(CI=RI)
+SEQ(CI=Z)
+T2(R=Y%DF=Y%T=40%W=1FD%S=O%A=O%F=AP%O=NNT11%RD=0%Q=)
+T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T6(R=Y%DF=Y%T=40%W=1FD%S=O%A=O%F=AP%O=NNT11%RD=0%Q=)
+U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+
+TRACEROUTE (using port 49185/udp)
+HOP RTT      ADDRESS
+1   64.01 ms 10.10.14.1
+2   57.14 ms 10.129.104.225
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Sep  9 14:11:56 2023 -- 1 IP address (1 host up) scanned in 282.23 seconds
