@@ -1,0 +1,52 @@
+# Nmap 7.94 scan initiated Wed Sep 13 02:01:29 2023 as: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p- -oN /home/kali/Documents/HTB-Notes/Zipping/scanned_recon/10.129.103.35/scans/_full_tcp_nmap.txt -oX /home/kali/Documents/HTB-Notes/Zipping/scanned_recon/10.129.103.35/scans/xml/_full_tcp_nmap.xml 10.129.103.35
+adjust_timeouts2: packet supposedly had rtt of -198036 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -198036 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -320554 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -320554 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -320922 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -320922 microseconds.  Ignoring time.
+Nmap scan report for 10.129.103.35
+Host is up, received user-set (0.059s latency).
+Scanned at 2023-09-13 02:01:30 EDT for 50s
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 9.0p1 Ubuntu 1ubuntu7.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 9d:6e:ec:02:2d:0f:6a:38:60:c6:aa:ac:1e:e0:c2:84 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBP6mSkoF2+wARZhzEmi4RDFkpQx3gdzfggbgeI5qtcIseo7h1mcxH8UCPmw8Gx9+JsOjcNPBpHtp2deNZBzgKcA=
+|   256 eb:95:11:c7:a6:fa:ad:74:ab:a2:c5:f6:a4:02:18:41 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOXXd7dM7wgVC+lrF0+ZIxKZlKdFhG2Caa9Uft/kLXDa
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.54 ((Ubuntu))
+|_http-server-header: Apache/2.4.54 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Zipping | Watch store
+Device type: general purpose
+Running: Linux 5.X
+OS CPE: cpe:/o:linux:linux_kernel:5.0
+OS details: Linux 5.0
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=9/13%OT=22%CT=1%CU=34138%PV=Y%DS=2%DC=T%G=Y%TM=6501506
+OS:C%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=109%TI=Z%CI=Z%TS=A)OPS(O1=M
+OS:53CST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11NW7%
+OS:O6=M53CST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%
+OS:DF=Y%T=40%W=FAF0%O=M53CNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=
+OS:0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF
+OS:=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=
+OS:%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=
+OS:G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Uptime guess: 30.790 days (since Sun Aug 13 07:04:03 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 143/tcp)
+HOP RTT      ADDRESS
+1   60.12 ms 10.10.14.1
+2   60.19 ms 10.129.103.35
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Sep 13 02:02:20 2023 -- 1 IP address (1 host up) scanned in 51.78 seconds
