@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Wed Sep 13 02:01:47 2023 as: nmap -vv -&#45;reason -Pn -T4 -sV -p 22 -&#45;script=banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods -oN /home/kali/Documents/HTB-Notes/Zipping/scanned_recon/10.129.103.35/scans/tcp22/tcp_22_ssh_nmap.txt -oX /home/kali/Documents/HTB-Notes/Zipping/scanned_recon/10.129.103.35/scans/tcp22/xml/tcp_22_ssh_nmap.xml 10.129.103.35 -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sV -p 22 -&#45;script=banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods -oN /home/kali/Documents/HTB-Notes/Zipping/scanned_recon/10.129.103.35/scans/tcp22/tcp_22_ssh_nmap.txt -oX /home/kali/Documents/HTB-Notes/Zipping/scanned_recon/10.129.103.35/scans/tcp22/xml/tcp_22_ssh_nmap.xml 10.129.103.35" start="1694584907" startstr="Wed Sep 13 02:01:47 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="22"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1694584908"/>
+<taskend task="NSE" time="1694584908"/>
+<taskbegin task="NSE" time="1694584908"/>
+<taskend task="NSE" time="1694584908"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1694584908"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1694584908"/>
+<taskbegin task="SYN Stealth Scan" time="1694584908"/>
+<taskend task="SYN Stealth Scan" time="1694584908" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1694584908"/>
+<taskend task="Service scan" time="1694584908" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1694584908"/>
+<taskend task="NSE" time="1694584910"/>
+<taskbegin task="NSE" time="1694584910"/>
+<taskend task="NSE" time="1694584910"/>
+<host starttime="1694584908" endtime="1694584910"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.103.35" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="ssh" product="OpenSSH" version="9.0p1 Ubuntu 1ubuntu7.3" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:9.0p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh2-enum-algos" output="&#xa;  kex_algorithms: (10)&#xa;      sntrup761x25519-sha512@openssh.com&#xa;      curve25519-sha256&#xa;      curve25519-sha256@libssh.org&#xa;      ecdh-sha2-nistp256&#xa;      ecdh-sha2-nistp384&#xa;      ecdh-sha2-nistp521&#xa;      diffie-hellman-group-exchange-sha256&#xa;      diffie-hellman-group16-sha512&#xa;      diffie-hellman-group18-sha512&#xa;      diffie-hellman-group14-sha256&#xa;  server_host_key_algorithms: (4)&#xa;      rsa-sha2-512&#xa;      rsa-sha2-256&#xa;      ecdsa-sha2-nistp256&#xa;      ssh-ed25519&#xa;  encryption_algorithms: (6)&#xa;      chacha20-poly1305@openssh.com&#xa;      aes128-ctr&#xa;      aes192-ctr&#xa;      aes256-ctr&#xa;      aes128-gcm@openssh.com&#xa;      aes256-gcm@openssh.com&#xa;  mac_algorithms: (10)&#xa;      umac-64-etm@openssh.com&#xa;      umac-128-etm@openssh.com&#xa;      hmac-sha2-256-etm@openssh.com&#xa;      hmac-sha2-512-etm@openssh.com&#xa;      hmac-sha1-etm@openssh.com&#xa;      umac-64@openssh.com&#xa;      umac-128@openssh.com&#xa;      hmac-sha2-256&#xa;      hmac-sha2-512&#xa;      hmac-sha1&#xa;  compression_algorithms: (2)&#xa;      none&#xa;      zlib@openssh.com"><table key="kex_algorithms">
+<elem>sntrup761x25519-sha512@openssh.com</elem>
+<elem>curve25519-sha256</elem>
+<elem>curve25519-sha256@libssh.org</elem>
+<elem>ecdh-sha2-nistp256</elem>
+<elem>ecdh-sha2-nistp384</elem>
+<elem>ecdh-sha2-nistp521</elem>
+<elem>diffie-hellman-group-exchange-sha256</elem>
+<elem>diffie-hellman-group16-sha512</elem>
+<elem>diffie-hellman-group18-sha512</elem>
+<elem>diffie-hellman-group14-sha256</elem>
+</table>
+<table key="server_host_key_algorithms">
+<elem>rsa-sha2-512</elem>
+<elem>rsa-sha2-256</elem>
+<elem>ecdsa-sha2-nistp256</elem>
+<elem>ssh-ed25519</elem>
+</table>
+<table key="encryption_algorithms">
+<elem>chacha20-poly1305@openssh.com</elem>
+<elem>aes128-ctr</elem>
+<elem>aes192-ctr</elem>
+<elem>aes256-ctr</elem>
+<elem>aes128-gcm@openssh.com</elem>
+<elem>aes256-gcm@openssh.com</elem>
+</table>
+<table key="mac_algorithms">
+<elem>umac-64-etm@openssh.com</elem>
+<elem>umac-128-etm@openssh.com</elem>
+<elem>hmac-sha2-256-etm@openssh.com</elem>
+<elem>hmac-sha2-512-etm@openssh.com</elem>
+<elem>hmac-sha1-etm@openssh.com</elem>
+<elem>umac-64@openssh.com</elem>
+<elem>umac-128@openssh.com</elem>
+<elem>hmac-sha2-256</elem>
+<elem>hmac-sha2-512</elem>
+<elem>hmac-sha1</elem>
+</table>
+<table key="compression_algorithms">
+<elem>none</elem>
+<elem>zlib@openssh.com</elem>
+</table>
+</script><script id="banner" output="SSH-2.0-OpenSSH_9.0p1 Ubuntu-1ubuntu7.3"/><script id="ssh-auth-methods" output="&#xa;  Supported authentication methods: &#xa;    publickey&#xa;    password"><table key="Supported authentication methods">
+<elem>publickey</elem>
+<elem>password</elem>
+</table>
+</script><script id="ssh-hostkey" output="&#xa;  256 9d:6e:ec:02:2d:0f:6a:38:60:c6:aa:ac:1e:e0:c2:84 (ECDSA)&#xa;ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBP6mSkoF2+wARZhzEmi4RDFkpQx3gdzfggbgeI5qtcIseo7h1mcxH8UCPmw8Gx9+JsOjcNPBpHtp2deNZBzgKcA=&#xa;  256 eb:95:11:c7:a6:fa:ad:74:ab:a2:c5:f6:a4:02:18:41 (ED25519)&#xa;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOXXd7dM7wgVC+lrF0+ZIxKZlKdFhG2Caa9Uft/kLXDa"><table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBP6mSkoF2+wARZhzEmi4RDFkpQx3gdzfggbgeI5qtcIseo7h1mcxH8UCPmw8Gx9+JsOjcNPBpHtp2deNZBzgKcA=</elem>
+<elem key="bits">256</elem>
+<elem key="fingerprint">9d6eec022d0f6a3860c6aaac1ee0c284</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIOXXd7dM7wgVC+lrF0+ZIxKZlKdFhG2Caa9Uft/kLXDa</elem>
+<elem key="bits">256</elem>
+<elem key="fingerprint">eb9511c7a6faad74aba2c5f6a4021841</elem>
+</table>
+</script></port>
+</ports>
+<times srtt="58667" rttvar="58667" to="293335"/>
+</host>
+<taskbegin task="NSE" time="1694584910"/>
+<taskend task="NSE" time="1694584910"/>
+<taskbegin task="NSE" time="1694584910"/>
+<taskend task="NSE" time="1694584910"/>
+<runstats><finished time="1694584910" timestr="Wed Sep 13 02:01:50 2023" summary="Nmap done at Wed Sep 13 02:01:50 2023; 1 IP address (1 host up) scanned in 2.96 seconds" elapsed="2.96" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

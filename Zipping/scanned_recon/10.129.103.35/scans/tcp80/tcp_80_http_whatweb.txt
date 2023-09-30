@@ -1,0 +1,88 @@
+WhatWeb report for http://10.129.103.35:80
+Status    : 200 OK
+Title     : Zipping | Watch store
+IP        : 10.129.103.35
+Country   : RESERVED, ZZ
+
+Summary   : Apache[2.4.54], Bootstrap, Email[info@website.com], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.54 (Ubuntu)], JQuery[3.4.1], Meta-Author[Devcrud], PoweredBy[precision], Script
+
+Detected Plugins:
+[ Apache ]
+	The Apache HTTP Server Project is an effort to develop and
+	maintain an open-source HTTP server for modern operating
+	systems including UNIX and Windows NT. The goal of this
+	project is to provide a secure, efficient and extensible
+	server that provides HTTP services in sync with the current
+	HTTP standards.
+
+	Version      : 2.4.54 (from HTTP Server Header)
+	Google Dorks: (3)
+	Website     : http://httpd.apache.org/
+
+[ Bootstrap ]
+	Bootstrap is an open source toolkit for developing with
+	HTML, CSS, and JS.
+
+	Website     : https://getbootstrap.com/
+
+[ Email ]
+	Extract email addresses. Find valid email address and
+	syntactically invalid email addresses from mailto: link
+	tags. We match syntactically invalid links containing
+	mailto: to catch anti-spam email addresses, eg. bob at
+	gmail.com. This uses the simplified email regular
+	expression from
+	http://www.regular-expressions.info/email.html for valid
+	email address matching.
+
+	String       : info@website.com
+
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration
+
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to
+	identify the operating system from the server header.
+
+	OS           : Ubuntu Linux
+	String       : Apache/2.4.54 (Ubuntu) (from server string)
+
+[ JQuery ]
+	A fast, concise, JavaScript that simplifies how to traverse
+	HTML documents, handle events, perform animations, and add
+	AJAX.
+
+	Version      : 3.4.1
+	Website     : http://jquery.com/
+
+[ Meta-Author ]
+	This plugin retrieves the author name from the meta name
+	tag - info:
+	http://www.webmarketingnow.com/tips/meta-tags-uncovered.html
+	#author
+
+	String       : Devcrud
+
+[ PoweredBy ]
+	This plugin identifies instances of 'Powered by x' text and
+	attempts to extract the value for x.
+
+	String       : precision
+
+[ Script ]
+	This plugin detects instances of script HTML elements and
+	returns the script language/type.
+
+
+HTTP Headers:
+	HTTP/1.1 200 OK
+	Date: Wed, 13 Sep 2023 06:01:52 GMT
+	Server: Apache/2.4.54 (Ubuntu)
+	Vary: Accept-Encoding
+	Content-Encoding: gzip
+	Content-Length: 4094
+	Connection: close
+	Content-Type: text/html; charset=UTF-8
+
+

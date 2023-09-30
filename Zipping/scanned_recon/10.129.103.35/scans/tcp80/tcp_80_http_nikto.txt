@@ -1,0 +1,18 @@
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          10.129.103.35
++ Target Hostname:    10.129.103.35
++ Target Port:        80
++ Start Time:         2023-09-13 02:01:52 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.54 (Ubuntu)
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
++ /shop/: Cookie PHPSESSID created without the httponly flag. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
++ /shop/: This might be interesting.
++ 7729 requests: 0 error(s) and 5 item(s) reported on remote host
++ End Time:           2023-09-13 02:10:15 (GMT-4) (503 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
