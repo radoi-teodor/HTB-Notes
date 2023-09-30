@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Sat Sep 30 11:43:48 2023 as: nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;top-ports 100 -oN /home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/_top_100_udp_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/xml/_top_100_udp_nmap.xml 10.129.92.7 -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;top-ports 100 -oN /home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/_top_100_udp_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/xml/_top_100_udp_nmap.xml 10.129.92.7" start="1696088628" startstr="Sat Sep 30 11:43:48 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="100" services="7,9,17,19,49,53,67-69,80,88,111,120,123,135-139,158,161-162,177,427,443,445,497,500,514-515,518,520,593,623,626,631,996-999,1022-1023,1025-1030,1433-1434,1645-1646,1701,1718-1719,1812-1813,1900,2000,2048-2049,2222-2223,3283,3456,3703,4444,4500,5000,5060,5353,5632,9200,10000,17185,20031,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49181-49182,49185-49186,49188,49190-49194,49200-49201,65024"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1696088628"/>
+<taskend task="NSE" time="1696088628"/>
+<taskbegin task="NSE" time="1696088628"/>
+<taskend task="NSE" time="1696088628"/>
+<taskbegin task="NSE" time="1696088628"/>
+<taskend task="NSE" time="1696088628"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1696088628"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1696088628"/>
+<taskbegin task="UDP Scan" time="1696088628"/>
+<taskend task="UDP Scan" time="1696088735" extrainfo="100 total ports"/>
+<taskbegin task="Service scan" time="1696088735"/>
+<taskprogress task="Service scan" time="1696088795" percent="26.67" remaining="166" etc="1696088960"/>
+<taskprogress task="Service scan" time="1696088827" percent="60.00" remaining="62" etc="1696088888"/>
+<taskend task="Service scan" time="1696088847" extrainfo="15 services on 1 host"/>
+<taskbegin task="Traceroute" time="1696088850"/>
+<taskend task="Traceroute" time="1696088852"/>
+<taskbegin task="Parallel DNS resolution of 2 hosts." time="1696088852"/>
+<taskend task="Parallel DNS resolution of 2 hosts." time="1696088852"/>
+<taskbegin task="NSE" time="1696088852"/>
+<taskprogress task="NSE" time="1696088883" percent="98.99" remaining="1" etc="1696088883"/>
+<taskprogress task="NSE" time="1696088913" percent="99.33" remaining="1" etc="1696088913"/>
+<taskprogress task="NSE" time="1696088943" percent="99.47" remaining="1" etc="1696088943"/>
+<taskend task="NSE" time="1696088964"/>
+<taskbegin task="NSE" time="1696088964"/>
+<taskend task="NSE" time="1696088965"/>
+<taskbegin task="NSE" time="1696088965"/>
+<taskend task="NSE" time="1696088965"/>
+<host starttime="1696088628" endtime="1696088965"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.92.7" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="85">
+<extrareasons reason="port-unreach" count="85" proto="udp" ports="7,9,17,19,49,67,69,111,120,135-136,139,158,161-162,177,427,443,445,497,514-515,518,520,593,623,631,996-999,1022-1023,1025-1030,1433-1434,1645-1646,1718-1719,1812-1813,1900,2000,2049,2222-2223,3283,3456,3703,4444,5000,5060,5353,5632,9200,10000,17185,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49181-49182,49185-49186,49188,49190-49191,49193,49200-49201,65024"/>
+</extraports>
+<port protocol="udp" portid="53"><state state="open" reason="udp-response" reason_ttl="127"/><service name="domain" product="Microsoft DNS" version="6.1.7601 (1DB15D39)" extrainfo="Windows Server 2008 R2 SP1" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:dns</cpe><cpe>cpe:/o:microsoft:windows_server_2008:r2:sp1</cpe></service><script id="dns-nsid" output="&#xa;  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)"><elem key="bind.version">Microsoft DNS 6.1.7601 (1DB15D39)</elem>
+</script></port>
+<port protocol="udp" portid="68"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="dhcpc" method="table" conf="3"/></port>
+<port protocol="udp" portid="80"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="udp" portid="88"><state state="open" reason="udp-response" reason_ttl="127"/><service name="kerberos-sec" product="Microsoft Windows Kerberos" extrainfo="server time: 2023-09-30 15:45:32Z" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:kerberos</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="udp" portid="123"><state state="open" reason="udp-response" reason_ttl="127"/><service name="ntp" product="NTP" version="v3" method="probed" conf="10"/><script id="ntp-info" output="&#xa;  receive time stamp: 2023-09-30T15:47:42"><elem key="receive time stamp">2023-09-30T15:47:42</elem>
+</script></port>
+<port protocol="udp" portid="137"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="netbios-ns" method="table" conf="3"/></port>
+<port protocol="udp" portid="138"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="netbios-dgm" method="table" conf="3"/></port>
+<port protocol="udp" portid="500"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="isakmp" method="table" conf="3"/></port>
+<port protocol="udp" portid="626"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="serialnumberd" method="table" conf="3"/></port>
+<port protocol="udp" portid="1701"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="L2TP" method="table" conf="3"/></port>
+<port protocol="udp" portid="2048"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="dls-monitor" method="table" conf="3"/></port>
+<port protocol="udp" portid="4500"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="nat-t-ike" method="table" conf="3"/></port>
+<port protocol="udp" portid="20031"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="bakbonenetvault" method="table" conf="3"/></port>
+<port protocol="udp" portid="49192"><state state="open|filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="udp" portid="49194"><state state="open|filtered" reason="no-response" reason_ttl="0"/></port>
+</ports>
+<os><portused state="closed" proto="udp" portid="7"/>
+<osfingerprint fingerprint="SCAN(V=7.94%E=4%D=9/30%OT=%CT=%CU=7%PV=Y%DS=2%DC=T%G=N%TM=65184385%P=x86_64-pc-linux-gnu)&#xa;SEQ(CI=I%II=I)&#xa;T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)&#xa;U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)&#xa;IE(R=Y%DFI=N%T=80%CD=Z)&#xa;"/>
+</os>
+<distance value="2"/>
+<hostscript><script id="clock-skew" output="9s"><elem key="stddev">0</elem>
+<elem key="mean">9</elem>
+<elem key="count">1</elem>
+<elem key="median">9</elem>
+</script></hostscript><trace port="49190" proto="udp">
+<hop ttl="1" ipaddr="10.10.14.1" rtt="58.11"/>
+<hop ttl="2" ipaddr="10.129.92.7" rtt="59.95"/>
+</trace>
+<times srtt="58861" rttvar="1284" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1696088966"/>
+<taskend task="NSE" time="1696088966"/>
+<taskbegin task="NSE" time="1696088966"/>
+<taskend task="NSE" time="1696088966"/>
+<taskbegin task="NSE" time="1696088966"/>
+<taskend task="NSE" time="1696088966"/>
+<runstats><finished time="1696088965" timestr="Sat Sep 30 11:49:25 2023" summary="Nmap done at Sat Sep 30 11:49:25 2023; 1 IP address (1 host up) scanned in 337.76 seconds" elapsed="337.76" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

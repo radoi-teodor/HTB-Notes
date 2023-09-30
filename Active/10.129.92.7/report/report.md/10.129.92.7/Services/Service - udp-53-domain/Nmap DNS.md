@@ -1,0 +1,29 @@
+```bash
+nmap -vv --reason -Pn -T4 -sU -sV -p 53 --script="banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/udp53/udp_53_dns_nmap.txt" -oX "/home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/udp53/xml/udp_53_dns_nmap.xml" 10.129.92.7
+```
+
+[/home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/udp53/udp_53_dns_nmap.txt](file:///home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/udp53/udp_53_dns_nmap.txt):
+
+```
+# Nmap 7.94 scan initiated Sat Sep 30 11:49:26 2023 as: nmap -vv --reason -Pn -T4 -sU -sV -p 53 "--script=banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN /home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/udp53/udp_53_dns_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/udp53/xml/udp_53_dns_nmap.xml 10.129.92.7
+Nmap scan report for 10.129.92.7
+Host is up, received user-set (0.058s latency).
+Scanned at 2023-09-30 11:49:26 EDT for 11s
+
+PORT   STATE SERVICE REASON               VERSION
+53/udp open  domain  udp-response ttl 127 Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+| dns-nsid: 
+|_  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)
+|_dns-cache-snoop: 0 of 100 tested domains are cached.
+|_dns-nsec3-enum: Can't determine domain for host 10.129.92.7; use dns-nsec3-enum.domains script arg.
+|_dns-nsec-enum: Can't determine domain for host 10.129.92.7; use dns-nsec-enum.domains script arg.
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1
+
+Host script results:
+|_dns-brute: Can't guess domain of "10.129.92.7"; use dns-brute.domain script argument.
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Sep 30 11:49:37 2023 -- 1 IP address (1 host up) scanned in 11.45 seconds
+
+```

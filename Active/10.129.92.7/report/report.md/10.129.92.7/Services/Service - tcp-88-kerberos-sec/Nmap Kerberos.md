@@ -1,0 +1,21 @@
+```bash
+nmap -vv --reason -Pn -T4 -sV -p 88 --script="banner,krb5-enum-users" -oN "/home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/tcp88/tcp_88_kerberos_nmap.txt" -oX "/home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/tcp88/xml/tcp_88_kerberos_nmap.xml" 10.129.92.7
+```
+
+[/home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/tcp88/tcp_88_kerberos_nmap.txt](file:///home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/tcp88/tcp_88_kerberos_nmap.txt):
+
+```
+# Nmap 7.94 scan initiated Sat Sep 30 11:45:29 2023 as: nmap -vv --reason -Pn -T4 -sV -p 88 --script=banner,krb5-enum-users -oN /home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/tcp88/tcp_88_kerberos_nmap.txt -oX /home/kali/Documents/HTB/HTB-Notes/Active/10.129.92.7/scans/tcp88/xml/tcp_88_kerberos_nmap.xml 10.129.92.7
+Nmap scan report for 10.129.92.7
+Host is up, received user-set (0.067s latency).
+Scanned at 2023-09-30 11:45:29 EDT for 17s
+
+PORT   STATE SERVICE      REASON          VERSION
+88/tcp open  kerberos-sec syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2023-09-30 15:45:37Z)
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Sep 30 11:45:46 2023 -- 1 IP address (1 host up) scanned in 17.55 seconds
+
+```
