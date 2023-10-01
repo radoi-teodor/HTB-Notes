@@ -1,0 +1,10 @@
+;; communications error to 10.129.227.255#53: timed out
+;; communications error to 10.129.227.255#53: timed out
+;; communications error to 10.129.227.255#53: timed out
+
+; <<>> DiG 9.18.12-1-Debian <<>> AXFR -p 53 @10.129.227.255
+; (1 server found)
+;; global options: +cmd
+;; no servers could be reached
+
+
