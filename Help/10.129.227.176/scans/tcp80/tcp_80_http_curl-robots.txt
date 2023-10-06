@@ -1,0 +1,16 @@
+HTTP/1.1 302 Found
+Date: Fri, 06 Oct 2023 11:05:17 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Location: http://help.htb/
+Content-Length: 280
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>302 Found</title>
+</head><body>
+<h1>Found</h1>
+<p>The document has moved <a href="http://help.htb/">here</a>.</p>
+<hr>
+<address>Apache/2.4.18 (Ubuntu) Server at 10.129.227.176 Port 80</address>
+</body></html>

